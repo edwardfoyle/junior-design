@@ -37,6 +37,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.DeviceList = New System.Windows.Forms.ListBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -166,11 +167,21 @@ Partial Class Form1
         Me.PictureBox3.TabIndex = 15
         Me.PictureBox3.TabStop = False
         '
+        'DeviceList
+        '
+        Me.DeviceList.FormattingEnabled = True
+        Me.DeviceList.ItemHeight = 16
+        Me.DeviceList.Location = New System.Drawing.Point(12, 247)
+        Me.DeviceList.Name = "DeviceList"
+        Me.DeviceList.Size = New System.Drawing.Size(290, 84)
+        Me.DeviceList.TabIndex = 17
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1011, 487)
+        Me.Controls.Add(Me.DeviceList)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -207,4 +218,5 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents DeviceList As ListBox
 End Class

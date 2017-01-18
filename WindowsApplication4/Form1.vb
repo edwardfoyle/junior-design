@@ -1,6 +1,6 @@
-﻿Imports Emgu.CV
-Imports Emgu.CV.Util
-Imports Emgu.CV.Structure
+﻿Option Explicit On
+Imports System.IO
+Imports System.Runtime.InteropServices
 
 Public Class Form1
 
@@ -13,7 +13,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        mLoadDeviceList()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
@@ -27,7 +27,7 @@ Public Class Form1
 
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
+        TakePicture()
     End Sub
 
     'Dim capturez As Capture = New Capture
@@ -44,15 +44,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub TextRA_TextChanged(sender As Object, e As EventArgs) Handles TextRA.TextChanged
+    'TEST STUFF
 
-    End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
-    End Sub
-
-    Private Sub TextDec_TextChanged(sender As Object, e As EventArgs) Handles TextDec.TextChanged
-
-    End Sub
 End Class

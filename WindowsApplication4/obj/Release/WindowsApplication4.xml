@@ -27,5 +27,11 @@ WindowsApplication4
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:WindowsApplication4.WebcamSnap">
+ <summary> 
+ This class takes a snapshot from any or all attached webcams 
+ </summary> 
+ <remarks></remarks> 
+</member>
 </members>
 </doc>
