@@ -25,8 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.btnChoose = New System.Windows.Forms.Button()
         Me.btnConnect = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SlewBtn = New System.Windows.Forms.Button()
         Me.TextDec = New System.Windows.Forms.TextBox()
@@ -36,10 +35,10 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.picCapture = New System.Windows.Forms.PictureBox()
         Me.DeviceList = New System.Windows.Forms.ListBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.connect = New System.Windows.Forms.Button()
+        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnChoose
@@ -60,23 +59,14 @@ Partial Class Form1
         Me.btnConnect.Text = "Connect"
         Me.btnConnect.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'btnSave
         '
-        Me.PictureBox1.BackgroundImage = Global.WindowsApplication4.My.Resources.Resources.constellation
-        Me.PictureBox1.Location = New System.Drawing.Point(567, 60)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(345, 337)
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(663, 435)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(162, 32)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Automatically Align"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSave.Location = New System.Drawing.Point(663, 435)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(162, 32)
+        Me.btnSave.TabIndex = 6
+        Me.btnSave.Text = "Automatically Align"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -158,29 +148,39 @@ Partial Class Form1
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Declination"
         '
-        'PictureBox3
+        'picCapture
         '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.PictureBox3.Location = New System.Drawing.Point(552, 47)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(375, 368)
-        Me.PictureBox3.TabIndex = 15
-        Me.PictureBox3.TabStop = False
+        Me.picCapture.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.picCapture.Location = New System.Drawing.Point(552, 47)
+        Me.picCapture.Name = "picCapture"
+        Me.picCapture.Size = New System.Drawing.Size(375, 368)
+        Me.picCapture.TabIndex = 15
+        Me.picCapture.TabStop = False
         '
         'DeviceList
         '
         Me.DeviceList.FormattingEnabled = True
         Me.DeviceList.ItemHeight = 16
-        Me.DeviceList.Location = New System.Drawing.Point(12, 247)
+        Me.DeviceList.Location = New System.Drawing.Point(9, 249)
         Me.DeviceList.Name = "DeviceList"
         Me.DeviceList.Size = New System.Drawing.Size(290, 84)
         Me.DeviceList.TabIndex = 17
+        '
+        'connect
+        '
+        Me.connect.Location = New System.Drawing.Point(9, 340)
+        Me.connect.Name = "connect"
+        Me.connect.Size = New System.Drawing.Size(85, 23)
+        Me.connect.TabIndex = 18
+        Me.connect.Text = "Connect"
+        Me.connect.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1011, 487)
+        Me.Controls.Add(Me.connect)
         Me.Controls.Add(Me.DeviceList)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -189,16 +189,14 @@ Partial Class Form1
         Me.Controls.Add(Me.SlewBtn)
         Me.Controls.Add(Me.TextDec)
         Me.Controls.Add(Me.TextRA)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnConnect)
         Me.Controls.Add(Me.tbTelescope)
         Me.Controls.Add(Me.btnChoose)
-        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.picCapture)
         Me.Name = "Form1"
         Me.Text = "Sky AutoTrack"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -207,8 +205,7 @@ Partial Class Form1
     Friend WithEvents btnChoose As Button
     Friend WithEvents tbTelescope As TextBox
     Friend WithEvents btnConnect As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSave As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents TextRA As TextBox
     Friend WithEvents TextDec As TextBox
@@ -217,6 +214,7 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents picCapture As PictureBox
     Friend WithEvents DeviceList As ListBox
+    Friend WithEvents connect As Button
 End Class
