@@ -27,7 +27,7 @@ Public Class Form1
 
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        TakePicture()
+        TakePicture(0)
     End Sub
 
     'Dim capturez As Capture = New Capture
@@ -83,7 +83,7 @@ Public Class Form1
             lbReturn = capGetDriverDescriptionA(x, lsName, 100, lsVers, 100)
 
             ' If there was a device add device name to the list 
-            If lbReturn Then Devices.Add(lsName.Trim)
+            If lbReturn Then DeviceList.Items.Add(lsName.Trim)
             x += 1
         Loop Until lbReturn = False
     End Sub
