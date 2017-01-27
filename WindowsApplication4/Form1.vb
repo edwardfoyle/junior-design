@@ -89,18 +89,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
-        Dim data As IDataObject
-        Dim bmap As Image
-        SendMessage(hHwnd, WM_CAP_EDIT_COPY, 0, 0)
-        data = Clipboard.GetDataObject()
-        If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
-            bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Image)
-            picCapture.Image = bmap
-            ClosePreviewWindow()
-            'If sfdImage.ShowDialog = DialogResult.OK Then
-            'bmap.Save(sfdImage.FileName, Imaging.ImageFormat.Bmp)
-            'End If
-        End If
+        TakePicture(iDevice)
     End Sub
 
     Private Sub ClosePreviewWindow()
@@ -108,7 +97,63 @@ Public Class Form1
         DestroyWindow(hHwnd)
     End Sub
 
+    Dim clicked As Boolean = False
+
     Private Sub connect_Click(sender As Object, e As EventArgs) Handles connect.Click
-        OpenPreviewWindow()
+        If Not clicked Then
+            OpenPreviewWindow()
+            clicked = True
+        Else
+            ClosePreviewWindow()
+            clicked = False
+        End If
     End Sub
+
+    Public OutputPath As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+    Public FilenamePrefix As String = "snapshot"
+
+    Public Sub TakePicture()
+        For i = 0 To Me.DeviceList.Items.Count - 1
+            Dim lsFilename As String = Path.Combine(OutputPath, Me.FilenamePrefix & i & ".jpg")
+            TakePicture(i, lsFilename)
+        Next
+    End Sub
+    Public Sub TakePicture(ByVal iDevice As Integer)
+        Me.TakePicture(iDevice, Path.Combine(OutputPath, Me.FilenamePrefix & ".jpg"))
+    End Sub
+    Public Sub TakePicture(ByVal iDevice As Integer, ByVal filename As String)
+
+        Dim lhHwnd As Integer ' Handle to preview window
+
+        ' Create a form to play with 
+        Using loWindow As New System.Windows.Forms.Form
+
+            ' Create capture window 
+            lhHwnd = capCreateCaptureWindowA(iDevice, WS_VISIBLE Or WS_CHILD, 0, 0, Me.Width,
+               Me.Height, loWindow.Handle.ToInt32, 0)
+
+            ' Hook up the device 
+            SendMessage(lhHwnd, WM_CAP_DRIVER_CONNECT, iDevice, 0)
+            ' Allow the webcam apeture to let enough light in 
+            For i = 1 To 10
+                Application.DoEvents()
+            Next
+
+            ' Copy image to clipboard 
+            SendMessage(lhHwnd, WM_CAP_EDIT_COPY, 0, 0)
+
+            ' Get image from clipboard and convert it to a bitmap 
+            Dim loData As IDataObject = Clipboard.GetDataObject()
+            If loData.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
+                Using loBitmap As Image = CType(loData.GetData(GetType(System.Drawing.Bitmap)), Image)
+                    loBitmap.Save(filename, Imaging.ImageFormat.Jpeg)
+                End Using
+            End If
+
+            SendMessage(lhHwnd, WM_CAP_DRIVER_DISCONNECT, iDevice, 0)
+
+        End Using
+
+    End Sub
+
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.btnChoose = New System.Windows.Forms.Button()
@@ -38,6 +38,7 @@ Partial Class Form1
         Me.picCapture = New System.Windows.Forms.PictureBox()
         Me.DeviceList = New System.Windows.Forms.ListBox()
         Me.connect = New System.Windows.Forms.Button()
+        Me.sfdImage = New System.Windows.Forms.SaveFileDialog()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -217,4 +218,5 @@ Partial Class Form1
     Friend WithEvents picCapture As PictureBox
     Friend WithEvents DeviceList As ListBox
     Friend WithEvents connect As Button
+    Friend WithEvents sfdImage As SaveFileDialog
 End Class
