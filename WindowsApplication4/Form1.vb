@@ -91,16 +91,18 @@ Public Class Form1
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         Dim data As IDataObject
         Dim bmap As Image
-        SendMessage(hHwnd, WM_CAP_EDIT_COPY, 0, 0)
-        data = Clipboard.GetDataObject()
-        If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
-            bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Image)
-            picCapture.Image = bmap
-            ClosePreviewWindow()
-            'If sfdImage.ShowDialog = DialogResult.OK Then
-            'bmap.Save(sfdImage.FileName, Imaging.ImageFormat.Bmp)
-            'End If
-        End If
+        Using loWindow As New System.Windows.Forms.Form
+            SendMessage(hHwnd, WM_CAP_EDIT_COPY, 0, 0)
+            data = Clipboard.GetDataObject()
+            Dim OutputPath As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+            Dim FilenamePrefix As String = "snapshot"
+            Dim lsFilename As String = Path.Combine(OutputPath, FilenamePrefix & ".jpg")
+            If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
+                bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Image)
+                picCapture.Image = bmap
+                bmap.Save(lsFilename, Imaging.ImageFormat.Jpeg)
+            End If
+        End Using
     End Sub
 
     Private Sub ClosePreviewWindow()
@@ -108,10 +110,19 @@ Public Class Form1
         DestroyWindow(hHwnd)
     End Sub
 
+    Dim clicked As Boolean = False
+
     Private Sub connect_Click(sender As Object, e As EventArgs) Handles connect.Click
-        OpenPreviewWindow()
+        If Not clicked Then
+            OpenPreviewWindow()
+            clicked = True
+        Else
+            ClosePreviewWindow()
+            clicked = False
+        End If
     End Sub
 
+<<<<<<< HEAD
     Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeviceList.SelectedIndexChanged
 
     End Sub
@@ -119,4 +130,6 @@ Public Class Form1
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
 
     End Sub
+=======
+>>>>>>> 82633b4812a9c931013ed0a9722a4ddf0cbe58a5
 End Class
