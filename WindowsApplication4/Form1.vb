@@ -89,7 +89,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
-        TakePicture(iDevice)
+        TakePicture(0)
     End Sub
 
     Private Sub ClosePreviewWindow()
