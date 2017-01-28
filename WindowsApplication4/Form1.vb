@@ -111,4 +111,12 @@ Public Class Form1
     Private Sub connect_Click(sender As Object, e As EventArgs) Handles connect.Click
         OpenPreviewWindow()
     End Sub
+
+    Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeviceList.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
+
+    End Sub
 End Class
