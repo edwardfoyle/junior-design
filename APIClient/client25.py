@@ -4,19 +4,18 @@ import os
 import sys
 import time
 import base64
-
-from urllib.request import urlopen
-from urllib.request import Request
-from urllib.error import HTTPError
-from urllib.parse import urlencode
-from urllib.parse import quote
-
+from urllib2 import urlopen
+from urllib2 import Request
+from urllib2 import HTTPError
+from urllib import urlencode
+from urllib import quote
+from exceptions import Exception
 from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email.mime.application import MIMEApplication
-from email.encoders import encode_noop
 
-import hashlib
+from email.mime.base import MIMEBase
+from email.mime.application  import MIMEApplication
+
+from email.encoders import encode_noop
 
 import json
 def json2python(data):
@@ -69,7 +68,7 @@ class Client(object):
             mp = MIMEMultipart('form-data', None, [m1, m2])
 
             # Make a custom generator to format it the way we need.
-            from io import StringIO
+            from cStringIO import StringIO
             from email.generator import Generator
 
             class MyGenerator(Generator):
@@ -109,13 +108,11 @@ class Client(object):
             print('Sending data:', data)
             headers = {}
 
-        data = data.encode('utf-8')
         request = Request(url=url, headers=headers, data=data)
 
         try:
             f = urlopen(request)
             txt = f.read()
-            txt = txt.decode('utf-8')
             print('Got json:', txt)
             result = json2python(txt)
             print('Got result:', result)
@@ -178,7 +175,6 @@ class Client(object):
         args = self._get_upload_args(**kwargs)
         try:
             f = open(fn, 'rb')
-            print(hashlib.md5(f.read()).hexdigest())
             result = self.send_request('upload', args, (fn, f.read()))
             return result
         except IOError:
@@ -410,6 +406,8 @@ if __name__ == '__main__':
 
     if opt.solved_id:
         # we have a jobId for retrieving results
+        txt = urlopen('http://nova.astrometry.net/api/jobs/%i/calibration' % opt.solved_id).read()
+        print(txt)
         retrieveurls = []
         if opt.wcs:
             # We don't need the API for this, just construct URL
@@ -462,5 +460,4 @@ if __name__ == '__main__':
     if opt.myjobs:
         jobs = c.myjobs()
         print(jobs)
-
 
