@@ -81,3 +81,5 @@ C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-des
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.exe.manifest
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.application
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Newtonsoft.Json.xml
