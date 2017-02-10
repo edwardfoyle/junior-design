@@ -19,6 +19,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         objTelescope = New ASCOM.DriverAccess.Telescope(My.Settings.Telescope)
         objTelescope.Connected = True
+        Print("Test")
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
@@ -121,8 +122,6 @@ Public Class Form1
             clicked = False
         End If
     End Sub
-
-<<<<<<< HEAD
     Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeviceList.SelectedIndexChanged
 
     End Sub
@@ -130,6 +129,4 @@ Public Class Form1
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
 
     End Sub
-=======
->>>>>>> 82633b4812a9c931013ed0a9722a4ddf0cbe58a5
 End Class
