@@ -5,6 +5,8 @@ Imports System.Runtime.InteropServices
 Public Class Form1
 
     Private objTelescope As ASCOM.DriverAccess.Telescope
+    Private WithEvents pyEx As New ProcessExecutor()
+    Private str As String
 
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
         Dim obj As New ASCOM.Utilities.Chooser
@@ -122,11 +124,32 @@ Public Class Form1
             clicked = False
         End If
     End Sub
+
     Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeviceList.SelectedIndexChanged
 
     End Sub
 
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
+        ' pyEx.Execute("c:/python27/python.exe", "C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w")
+        Dim proc As New Process()
+        proc.StartInfo.FileName = "C:/python27/python.exe"
+        proc.StartInfo.Arguments = "C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w"
+        proc.StartInfo.UseShellExecute = False
+        proc.StartInfo.RedirectStandardOutput = True
+        proc.Start();
+    End Sub
 
+    Private Sub processExecutor_outputRead(ByVal output As String) Handles pyEx.OutputRead
+        Me.Invoke(New processCommandOutputDelegate(AddressOf processCommandOutput), output)
+    End Sub
+
+    Private Delegate Sub processCommandOutputDelegate(ByVal output As String)
+    Private Sub processCommandOutput(ByVal output As String)
+        str = str + output
+        Console.WriteLine(str)
+    End Sub
+
+    Private Sub Form1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        pyEx.Dispose()
     End Sub
 End Class

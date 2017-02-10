@@ -40,6 +40,7 @@ Partial Class Form1
         Me.connect = New System.Windows.Forms.Button()
         Me.queryAPI = New System.Windows.Forms.Button()
         Me.sfdImage = New System.Windows.Forms.SaveFileDialog()
+        Me.queryResults = New System.Windows.Forms.TextBox()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -192,18 +193,29 @@ Partial Class Form1
         '
         'queryAPI
         '
-        Me.queryAPI.Location = New System.Drawing.Point(270, 331)
+        Me.queryAPI.Location = New System.Drawing.Point(270, 353)
         Me.queryAPI.Name = "queryAPI"
         Me.queryAPI.Size = New System.Drawing.Size(75, 23)
         Me.queryAPI.TabIndex = 19
         Me.queryAPI.Text = "Query API"
         Me.queryAPI.UseVisualStyleBackColor = True
         '
+        'queryResults
+        '
+        Me.queryResults.Font = New System.Drawing.Font("Consolas", 8.25!)
+        Me.queryResults.Location = New System.Drawing.Point(270, 50)
+        Me.queryResults.Multiline = True
+        Me.queryResults.Name = "queryResults"
+        Me.queryResults.Size = New System.Drawing.Size(121, 287)
+        Me.queryResults.TabIndex = 20
+        Me.queryResults.Text = "Query results will appear here"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(758, 396)
+        Me.Controls.Add(Me.queryResults)
         Me.Controls.Add(Me.queryAPI)
         Me.Controls.Add(Me.connect)
         Me.Controls.Add(Me.DeviceList)
@@ -245,4 +257,5 @@ Partial Class Form1
     Friend WithEvents connect As Button
     Friend WithEvents queryAPI As Button
     Friend WithEvents sfdImage As SaveFileDialog
+    Friend WithEvents queryResults As TextBox
 End Class
