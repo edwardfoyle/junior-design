@@ -136,7 +136,7 @@ Public Class Form1
         proc.StartInfo.Arguments = "C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w"
         proc.StartInfo.UseShellExecute = False
         proc.StartInfo.RedirectStandardOutput = True
-        proc.Start();
+        proc.Start()
     End Sub
 
     Private Sub processExecutor_outputRead(ByVal output As String) Handles pyEx.OutputRead
@@ -151,5 +151,10 @@ Public Class Form1
 
     Private Sub Form1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         pyEx.Dispose()
+    End Sub
+
+    Private Sub LocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LocationToolStripMenuItem.Click
+        Dim dialog As New Form2
+        dialog.Show()
     End Sub
 End Class

@@ -40,3 +40,4 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Release\WindowsApplication4.xml
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Release\WindowsApplication4.pdb
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Release\WindowsApplication4.vbprojResolveAssemblyReference.cache
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Release\WindowsApplication4.Form2.resources
