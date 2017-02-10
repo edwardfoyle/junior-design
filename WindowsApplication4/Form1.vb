@@ -72,7 +72,12 @@ Public Class Form1
         Dim x As Integer = 0
         Do
             bReturn = capGetDriverDescriptionA(x, strName, 100, strVer, 100)
-            If bReturn Then DeviceList.Items.Add(strName.Trim)
+            If bReturn Then
+                Dim menuitem As New ToolStripMenuItem()
+                menuitem.Text = strName.Trim
+                VideoDeviceToolStripMenuItem.DropDownItems.Add(menuitem)
+                menuitem.CheckOnClick = True
+            End If
             x += 1
         Loop Until bReturn = False
     End Sub
@@ -115,7 +120,7 @@ Public Class Form1
 
     Dim clicked As Boolean = False
 
-    Private Sub connect_Click(sender As Object, e As EventArgs) Handles connect.Click
+    Private Sub connect_Click(sender As Object, e As EventArgs)
         If Not clicked Then
             OpenPreviewWindow()
             clicked = True
@@ -125,7 +130,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeviceList.SelectedIndexChanged
+    Private Sub DeviceList_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -156,5 +161,19 @@ Public Class Form1
     Private Sub LocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LocationToolStripMenuItem.Click
         Dim dialog As New Form2
         dialog.Show()
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub ConnectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConnectToolStripMenuItem.Click
+        If Not clicked Then
+            OpenPreviewWindow()
+            clicked = True
+        Else
+            ClosePreviewWindow()
+            clicked = False
+        End If
     End Sub
 End Class

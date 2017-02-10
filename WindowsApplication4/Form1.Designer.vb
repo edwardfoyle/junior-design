@@ -35,17 +35,17 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.picCapture = New System.Windows.Forms.PictureBox()
-        Me.DeviceList = New System.Windows.Forms.ListBox()
-        Me.connect = New System.Windows.Forms.Button()
         Me.queryAPI = New System.Windows.Forms.Button()
         Me.sfdImage = New System.Windows.Forms.SaveFileDialog()
         Me.queryResults = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.picCapture = New System.Windows.Forms.PictureBox()
+        Me.VideoDeviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConnectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnChoose
@@ -162,36 +162,6 @@ Partial Class Form1
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Declination"
         '
-        'picCapture
-        '
-        Me.picCapture.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.picCapture.Location = New System.Drawing.Point(552, 47)
-        Me.picCapture.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.picCapture.Name = "picCapture"
-        Me.picCapture.Size = New System.Drawing.Size(375, 368)
-        Me.picCapture.TabIndex = 15
-        Me.picCapture.TabStop = False
-        '
-        'DeviceList
-        '
-        Me.DeviceList.FormattingEnabled = True
-        Me.DeviceList.ItemHeight = 16
-        Me.DeviceList.Location = New System.Drawing.Point(9, 249)
-        Me.DeviceList.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DeviceList.Name = "DeviceList"
-        Me.DeviceList.Size = New System.Drawing.Size(289, 84)
-        Me.DeviceList.TabIndex = 17
-        '
-        'connect
-        '
-        Me.connect.Location = New System.Drawing.Point(9, 340)
-        Me.connect.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.connect.Name = "connect"
-        Me.connect.Size = New System.Drawing.Size(85, 23)
-        Me.connect.TabIndex = 18
-        Me.connect.Text = "Connect"
-        Me.connect.UseVisualStyleBackColor = True
-        '
         'queryAPI
         '
         Me.queryAPI.Location = New System.Drawing.Point(360, 434)
@@ -226,7 +196,7 @@ Partial Class Form1
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem, Me.VideoDeviceToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -234,8 +204,31 @@ Partial Class Form1
         'LocationToolStripMenuItem
         '
         Me.LocationToolStripMenuItem.Name = "LocationToolStripMenuItem"
-        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(141, 26)
         Me.LocationToolStripMenuItem.Text = "Location"
+        '
+        'picCapture
+        '
+        Me.picCapture.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.picCapture.Location = New System.Drawing.Point(552, 47)
+        Me.picCapture.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picCapture.Name = "picCapture"
+        Me.picCapture.Size = New System.Drawing.Size(375, 368)
+        Me.picCapture.TabIndex = 15
+        Me.picCapture.TabStop = False
+        '
+        'VideoDeviceToolStripMenuItem
+        '
+        Me.VideoDeviceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem})
+        Me.VideoDeviceToolStripMenuItem.Name = "VideoDeviceToolStripMenuItem"
+        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.VideoDeviceToolStripMenuItem.Text = "Video Device"
+        '
+        'ConnectToolStripMenuItem
+        '
+        Me.ConnectToolStripMenuItem.Name = "ConnectToolStripMenuItem"
+        Me.ConnectToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ConnectToolStripMenuItem.Text = "Connect"
         '
         'Form1
         '
@@ -244,8 +237,6 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(1011, 487)
         Me.Controls.Add(Me.queryResults)
         Me.Controls.Add(Me.queryAPI)
-        Me.Controls.Add(Me.connect)
-        Me.Controls.Add(Me.DeviceList)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -263,9 +254,9 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.Text = "Sky AutoTrack"
-        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.picCapture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,12 +275,12 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents picCapture As PictureBox
-    Friend WithEvents DeviceList As ListBox
-    Friend WithEvents connect As Button
     Friend WithEvents queryAPI As Button
     Friend WithEvents sfdImage As SaveFileDialog
     Friend WithEvents queryResults As TextBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LocationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VideoDeviceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConnectToolStripMenuItem As ToolStripMenuItem
 End Class
