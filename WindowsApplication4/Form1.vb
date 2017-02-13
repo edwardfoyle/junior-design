@@ -176,4 +176,24 @@ Public Class Form1
             clicked = False
         End If
     End Sub
+
+    Private Sub NoviceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviceToolStripMenuItem.Click
+        If NoviceToolStripMenuItem.Checked Then
+            NoviceToolStripMenuItem.Checked = False
+            AdvancedToolStripMenuItem.Checked = True
+        Else
+            NoviceToolStripMenuItem.Checked = True
+            AdvancedToolStripMenuItem.Checked = False
+        End If
+    End Sub
+
+    Private Sub AdvancedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdvancedToolStripMenuItem.Click
+        If AdvancedToolStripMenuItem.Checked Then
+            NoviceToolStripMenuItem.Checked = True
+            AdvancedToolStripMenuItem.Checked = False
+        Else
+            NoviceToolStripMenuItem.Checked = False
+            AdvancedToolStripMenuItem.Checked = True
+        End If
+    End Sub
 End Class
