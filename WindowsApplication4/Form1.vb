@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 Imports System.IO
+Imports System.Net
 Imports System.Runtime.InteropServices
 
 Public Class Form1
@@ -21,7 +22,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         objTelescope = New ASCOM.DriverAccess.Telescope(My.Settings.Telescope)
         objTelescope.Connected = True
-        Print("Test")
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
@@ -195,5 +196,24 @@ Public Class Form1
             NoviceToolStripMenuItem.Checked = False
             AdvancedToolStripMenuItem.Checked = True
         End If
+    End Sub
+
+    Private Sub getNearbyObject()
+        If objTelescope IsNot Nothing Then
+            Dim RA As Integer = objTelescope.RightAscension
+            Dim Dec As Integer = objTelescope.Declination
+            Dim coord As String = CStr(RA) + "%3A00%3A00-" + CStr(Dec) + "00%3A00%3A00"
+            Dim url As String = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + coord + "&CooFrame=FK5&CooEpoch=2000&CooEqui=2000&CooDefinedFrames=none&Radius=2&Radius.unit=arcmin&submit=submit+query&CoordList="
+            Dim request As WebRequest = WebRequest.Create(url)
+            Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
+            Dim datastream As Stream = response.GetResponseStream
+            Dim reader As New StreamReader(datastream)
+            Dim strData As String = reader.ReadToEnd
+            TextBox1.Text = strData
+        End If
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        getNearbyObject()
     End Sub
 End Class
