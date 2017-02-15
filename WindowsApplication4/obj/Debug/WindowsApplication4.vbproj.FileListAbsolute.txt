@@ -40,23 +40,11 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\WindowsApplication4.application
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\Emgu.CV.World.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\Emgu.CV.World.xml
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.exe.config
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Interop.WMPLib.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.vbproj.ResolveComReference.cache
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.exe
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.xml
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.pdb
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.vbprojResolveAssemblyReference.cache
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.Form1.resources
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.Resources.resources
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.UserControl1.resources
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.vbproj.GenerateResource.Cache
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.exe.manifest
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.application
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.exe
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.pdb
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\WindowsApplication4.xml
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\ASCOM.Astrometry.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\ASCOM.Attributes.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\ASCOM.Controls.dll
@@ -79,7 +67,19 @@ C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-des
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\ASCOM.Exceptions.xml
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Interop.WMPLib.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.exe.manifest
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\WindowsApplication4.application
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.exe.config
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\skyAutoTrack.Form1.resources
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\skyAutoTrack.Resources.resources
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\skyAutoTrack.UserControl1.resources
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.xml
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.exe.manifest
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.application
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.exe
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.pdb
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Debug\Sky AutoTrack.xml
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.exe.manifest
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.application
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.exe
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.pdb

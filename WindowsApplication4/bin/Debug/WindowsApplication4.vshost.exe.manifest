@@ -215,14 +215,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsApplication4.exe" size="362464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsApplication4.exe" size="359904">
       <assemblyIdentity name="WindowsApplication4" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yOObVrxiDdacmLOgQfOMg+lAqBofpU25YCFcEBzh2FI=</dsig:DigestValue>
+        <dsig:DigestValue>DJMG/bLciu4ikv1Z5JUF+dYfy+wp3KauowlE6DUOuzg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

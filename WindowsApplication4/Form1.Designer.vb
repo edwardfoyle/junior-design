@@ -90,35 +90,35 @@ Partial Class Form1
         '
         'TextDec
         '
-        Me.TextDec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "Dec", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextDec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "Dec", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextDec.Location = New System.Drawing.Point(88, 122)
         Me.TextDec.Margin = New System.Windows.Forms.Padding(2)
         Me.TextDec.Name = "TextDec"
         Me.TextDec.Size = New System.Drawing.Size(76, 20)
         Me.TextDec.TabIndex = 8
-        Me.TextDec.Text = Global.WindowsApplication4.My.MySettings.Default.Dec
+        Me.TextDec.Text = Global.skyAutoTrack.My.MySettings.Default.Dec
         Me.TextDec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextRA
         '
-        Me.TextRA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "RA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextRA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "RA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextRA.Location = New System.Drawing.Point(9, 122)
         Me.TextRA.Margin = New System.Windows.Forms.Padding(2)
         Me.TextRA.Name = "TextRA"
         Me.TextRA.Size = New System.Drawing.Size(76, 20)
         Me.TextRA.TabIndex = 7
-        Me.TextRA.Text = Global.WindowsApplication4.My.MySettings.Default.RA
+        Me.TextRA.Text = Global.skyAutoTrack.My.MySettings.Default.RA
         Me.TextRA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbTelescope
         '
-        Me.tbTelescope.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "Telescope", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.tbTelescope.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "Telescope", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.tbTelescope.Location = New System.Drawing.Point(9, 49)
         Me.tbTelescope.Margin = New System.Windows.Forms.Padding(2)
         Me.tbTelescope.Name = "tbTelescope"
         Me.tbTelescope.Size = New System.Drawing.Size(76, 20)
         Me.tbTelescope.TabIndex = 1
-        Me.tbTelescope.Text = Global.WindowsApplication4.My.MySettings.Default.Telescope
+        Me.tbTelescope.Text = Global.skyAutoTrack.My.MySettings.Default.Telescope
         '
         'Label1
         '
