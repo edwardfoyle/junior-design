@@ -1,0 +1,1 @@
+c:/python27/python C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w
