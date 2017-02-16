@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Net
 Imports System.Runtime.InteropServices
+Imports System.Web
 
 Public Class Form1
 
@@ -185,7 +186,24 @@ Public Class Form1
         Else
             NoviceToolStripMenuItem.Checked = True
             AdvancedToolStripMenuItem.Checked = False
+            switchMode(noviceCamPos)
         End If
+    End Sub
+
+    Dim noviceCamPos As New Point(225, 47)
+    Dim advancedCamPos As New Point(425, 47)
+
+    Private Sub switchMode(camPos As Point)
+        queryResults.Visible = Not queryResults.Visible
+        queryAPI.Visible = Not queryAPI.Visible
+        Label2.Visible = Not Label2.Visible
+        TextRA.Visible = Not TextRA.Visible
+        TextDec.Visible = Not TextDec.Visible
+        Label3.Visible = Not Label3.Visible
+        Label4.Visible = Not Label4.Visible
+        SlewBtn.Visible = Not SlewBtn.Visible
+        picCapture.Location = camPos
+        btnSave.Location = New Point(camPos.X + 0.25 * picCapture.Size.Width, camPos.Y + 315)
     End Sub
 
     Private Sub AdvancedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdvancedToolStripMenuItem.Click
@@ -195,6 +213,7 @@ Public Class Form1
         Else
             NoviceToolStripMenuItem.Checked = False
             AdvancedToolStripMenuItem.Checked = True
+            switchMode(advancedCamPos)
         End If
     End Sub
 
@@ -206,14 +225,14 @@ Public Class Form1
             Dim url As String = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + coord + "&CooFrame=FK5&CooEpoch=2000&CooEqui=2000&CooDefinedFrames=none&Radius=2&Radius.unit=arcmin&submit=submit+query&CoordList="
             Dim request As WebRequest = WebRequest.Create(url)
             Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-            Dim datastream As Stream = response.GetResponseStream
-            Dim reader As New StreamReader(datastream)
-            Dim strData As String = reader.ReadToEnd
-            TextBox1.Text = strData
+            Dim document As New HtmlAgilityPack.HtmlDocument()
+
+
+
         End If
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         getNearbyObject()
     End Sub
 End Class

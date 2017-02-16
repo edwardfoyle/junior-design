@@ -47,8 +47,6 @@ Partial Class Form1
         Me.NoviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.picCapture = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,7 +73,7 @@ Partial Class Form1
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(663, 434)
+        Me.btnSave.Location = New System.Drawing.Point(660, 430)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(163, 32)
@@ -209,14 +207,14 @@ Partial Class Form1
         'LocationToolStripMenuItem
         '
         Me.LocationToolStripMenuItem.Name = "LocationToolStripMenuItem"
-        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.LocationToolStripMenuItem.Text = "Location"
         '
         'VideoDeviceToolStripMenuItem
         '
         Me.VideoDeviceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem})
         Me.VideoDeviceToolStripMenuItem.Name = "VideoDeviceToolStripMenuItem"
-        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.VideoDeviceToolStripMenuItem.Text = "Video Device"
         '
         'ConnectToolStripMenuItem
@@ -230,13 +228,13 @@ Partial Class Form1
         Me.DisplayToolStripMenuItem.CheckOnClick = True
         Me.DisplayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoviceToolStripMenuItem, Me.AdvancedToolStripMenuItem})
         Me.DisplayToolStripMenuItem.Name = "DisplayToolStripMenuItem"
-        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.DisplayToolStripMenuItem.Text = "Display"
         '
         'NoviceToolStripMenuItem
         '
         Me.NoviceToolStripMenuItem.Name = "NoviceToolStripMenuItem"
-        Me.NoviceToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
+        Me.NoviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.NoviceToolStripMenuItem.Text = "Novice"
         '
         'AdvancedToolStripMenuItem
@@ -244,7 +242,7 @@ Partial Class Form1
         Me.AdvancedToolStripMenuItem.Checked = True
         Me.AdvancedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
-        Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
+        Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
         '
         'picCapture
@@ -257,30 +255,11 @@ Partial Class Form1
         Me.picCapture.TabIndex = 15
         Me.picCapture.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(199, 329)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(67, 229)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 194)
-        Me.TextBox1.TabIndex = 23
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1011, 487)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.queryResults)
         Me.Controls.Add(Me.queryAPI)
         Me.Controls.Add(Me.Label4)
@@ -332,6 +311,4 @@ Partial Class Form1
     Friend WithEvents DisplayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NoviceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdvancedToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
 End Class
