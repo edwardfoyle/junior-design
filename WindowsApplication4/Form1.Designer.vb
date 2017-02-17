@@ -97,35 +97,35 @@ Partial Class Form1
         '
         'TextDec
         '
-        Me.TextDec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "Dec", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextDec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "Dec", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextDec.Location = New System.Drawing.Point(117, 150)
-        Me.TextDec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextDec.Margin = New System.Windows.Forms.Padding(2)
         Me.TextDec.Name = "TextDec"
         Me.TextDec.Size = New System.Drawing.Size(100, 22)
         Me.TextDec.TabIndex = 8
-        Me.TextDec.Text = Global.WindowsApplication4.My.MySettings.Default.Dec
+        Me.TextDec.Text = Global.skyAutoTrack.My.MySettings.Default.Dec
         Me.TextDec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextRA
         '
-        Me.TextRA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "RA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextRA.Location = New System.Drawing.Point(12, 150)
-        Me.TextRA.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextRA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "RA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextRA.Location = New System.Drawing.Point(9, 150)
+        Me.TextRA.Margin = New System.Windows.Forms.Padding(2)
         Me.TextRA.Name = "TextRA"
         Me.TextRA.Size = New System.Drawing.Size(100, 22)
         Me.TextRA.TabIndex = 7
-        Me.TextRA.Text = Global.WindowsApplication4.My.MySettings.Default.RA
+        Me.TextRA.Text = Global.skyAutoTrack.My.MySettings.Default.RA
         Me.TextRA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbTelescope
         '
-        Me.tbTelescope.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.WindowsApplication4.My.MySettings.Default, "Telescope", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.tbTelescope.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.skyAutoTrack.My.MySettings.Default, "Telescope", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.tbTelescope.Location = New System.Drawing.Point(12, 60)
-        Me.tbTelescope.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbTelescope.Margin = New System.Windows.Forms.Padding(2)
         Me.tbTelescope.Name = "tbTelescope"
         Me.tbTelescope.Size = New System.Drawing.Size(100, 22)
         Me.tbTelescope.TabIndex = 1
-        Me.tbTelescope.Text = Global.WindowsApplication4.My.MySettings.Default.Telescope
+        Me.tbTelescope.Text = Global.skyAutoTrack.My.MySettings.Default.Telescope
         '
         'Label1
         '
@@ -207,14 +207,14 @@ Partial Class Form1
         'LocationToolStripMenuItem
         '
         Me.LocationToolStripMenuItem.Name = "LocationToolStripMenuItem"
-        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
         Me.LocationToolStripMenuItem.Text = "Location"
         '
         'VideoDeviceToolStripMenuItem
         '
         Me.VideoDeviceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem})
         Me.VideoDeviceToolStripMenuItem.Name = "VideoDeviceToolStripMenuItem"
-        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
         Me.VideoDeviceToolStripMenuItem.Text = "Video Device"
         '
         'ConnectToolStripMenuItem
@@ -228,13 +228,13 @@ Partial Class Form1
         Me.DisplayToolStripMenuItem.CheckOnClick = True
         Me.DisplayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoviceToolStripMenuItem, Me.AdvancedToolStripMenuItem})
         Me.DisplayToolStripMenuItem.Name = "DisplayToolStripMenuItem"
-        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
         Me.DisplayToolStripMenuItem.Text = "Display"
         '
         'NoviceToolStripMenuItem
         '
         Me.NoviceToolStripMenuItem.Name = "NoviceToolStripMenuItem"
-        Me.NoviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.NoviceToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.NoviceToolStripMenuItem.Text = "Novice"
         '
         'AdvancedToolStripMenuItem
@@ -242,7 +242,7 @@ Partial Class Form1
         Me.AdvancedToolStripMenuItem.Checked = True
         Me.AdvancedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
-        Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
         '
         'picCapture

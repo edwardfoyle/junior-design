@@ -3,12 +3,16 @@ Imports System.IO
 Imports System.Net
 Imports System.Runtime.InteropServices
 Imports System.Web
+Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
 
 Public Class Form1
 
     Private objTelescope As ASCOM.DriverAccess.Telescope
-    Private WithEvents pyEx As New ProcessExecutor()
-    Private str As String
+    Private snapshotName As String = "snapshot.jpg" ' DO NOT CHANGE
+    Private defaultImage As String = "starsTest.jpg" ' DO NOT CHANGE
+    Private useDefaultImage As Boolean = True
 
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
         Dim obj As New ASCOM.Utilities.Chooser
@@ -105,8 +109,7 @@ Public Class Form1
             SendMessage(hHwnd, WM_CAP_EDIT_COPY, 0, 0)
             data = Clipboard.GetDataObject()
             Dim OutputPath As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
-            Dim FilenamePrefix As String = "snapshot"
-            Dim lsFilename As String = Path.Combine(OutputPath, FilenamePrefix & ".jpg")
+            Dim lsFilename As String = Path.Combine(OutputPath, snapshotName)
             If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
                 bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Image)
                 picCapture.Image = bmap
@@ -137,27 +140,44 @@ Public Class Form1
     End Sub
 
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
-        ' pyEx.Execute("c:/python27/python.exe", "C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w")
+        Dim thread As New System.Threading.Thread(Sub() asyncQuery(Me))
+        thread.Start()
+    End Sub
+
+    Private Sub asyncQuery(Form1 As Form1)
         Dim proc As New Process()
-        proc.StartInfo.FileName = "C:/python27/python.exe"
-        proc.StartInfo.Arguments = "C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\APIClient\client25.py -k ahhxdcgzhkqyxwas -u C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\TestingAssets\starsTest.jpg -w"
+        ' TODO: change this to a dynamic path at some point
+        proc.StartInfo.FileName = "C:\python27\python.exe"
+        Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
+        Dim imPath As String
+        If useDefaultImage Then
+            imPath = Path.Combine(Environment.CurrentDirectory, defaultImage)
+        Else
+            imPath = Path.Combine(Environment.CurrentDirectory, snapshotName)
+        End If
+        proc.StartInfo.Arguments = pyPath + " -k ahhxdcgzhkqyxwas -u " + imPath + " -w"
+        proc.StartInfo.CreateNoWindow = True
         proc.StartInfo.UseShellExecute = False
         proc.StartInfo.RedirectStandardOutput = True
         proc.Start()
+        Dim stdout As String
+        Using outStreamReader As StreamReader = proc.StandardOutput
+            stdout = outStreamReader.ReadToEnd()
+        End Using
+        ' regular expression to match the last json object returned from the API query
+        Dim pattern As String = "{((?!{).)*}\s*$"
+        Dim match As Match = Regex.Match(stdout, pattern)
+        stdout = match.Value
+        Dim jsonObj As JObject = JObject.Parse(stdout)
+        Dim ra As Double = jsonObj.Item("ra")
+        Dim dec As Double = jsonObj.Item("dec")
+        Form1.setRaDecRes(ra, dec, stdout)
     End Sub
 
-    Private Sub processExecutor_outputRead(ByVal output As String) Handles pyEx.OutputRead
-        Me.Invoke(New processCommandOutputDelegate(AddressOf processCommandOutput), output)
-    End Sub
-
-    Private Delegate Sub processCommandOutputDelegate(ByVal output As String)
-    Private Sub processCommandOutput(ByVal output As String)
-        str = str + output
-        Console.WriteLine(str)
-    End Sub
-
-    Private Sub Form1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-        pyEx.Dispose()
+    Public Sub setRaDecRes(ra As Double, dec As Double, raw As String)
+        Me.BeginInvoke(Sub() Me.TextRA.Text = CStr(ra))
+        Me.BeginInvoke(Sub() Me.TextDec.Text = CStr(dec))
+        Me.BeginInvoke(Sub() Me.queryResults.Text = raw)
     End Sub
 
     Private Sub LocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LocationToolStripMenuItem.Click
