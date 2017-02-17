@@ -83,3 +83,4 @@ C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-des
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.application
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.exe
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.pdb
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\skyAutoTrack.Form2.resources

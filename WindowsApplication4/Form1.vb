@@ -13,6 +13,7 @@ Public Class Form1
     Private snapshotName As String = "snapshot.jpg" ' DO NOT CHANGE
     Private defaultImage As String = "starsTest.jpg" ' DO NOT CHANGE
     Private useDefaultImage As Boolean = True
+    Private noviceMode As Boolean = True
 
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
         Dim obj As New ASCOM.Utilities.Chooser
@@ -44,7 +45,7 @@ Public Class Form1
     Private Sub SlewBtn_Click(sender As Object, e As EventArgs) Handles SlewBtn.Click
         If (objTelescope IsNot Nothing) Then
             objTelescope.Tracking = True
-            objTelescope.SlewToCoordinates(Convert.ToDouble(My.Settings.RA), Convert.ToDouble(My.Settings.Dec))
+            objTelescope.SlewToCoordinates(Convert.ToDouble(My.Settings.RA) / 15, Convert.ToDouble(My.Settings.Dec))
         End If
     End Sub
 
@@ -116,6 +117,8 @@ Public Class Form1
                 bmap.Save(lsFilename, Imaging.ImageFormat.Jpeg)
             End If
         End Using
+        queryAPI_Click(Nothing, Nothing)
+
     End Sub
 
     Private Sub ClosePreviewWindow()
@@ -140,6 +143,7 @@ Public Class Form1
     End Sub
 
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
+        queryResults.Text = "Solving Image..."
         Dim thread As New System.Threading.Thread(Sub() asyncQuery(Me))
         thread.Start()
     End Sub
@@ -178,6 +182,9 @@ Public Class Form1
         Me.BeginInvoke(Sub() Me.TextRA.Text = CStr(ra))
         Me.BeginInvoke(Sub() Me.TextDec.Text = CStr(dec))
         Me.BeginInvoke(Sub() Me.queryResults.Text = raw)
+        If NoviceToolStripMenuItem.Checked Then
+            Me.BeginInvoke(Sub() Me.SlewBtn_Click(Nothing, Nothing))
+        End If
     End Sub
 
     Private Sub LocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LocationToolStripMenuItem.Click
@@ -245,7 +252,6 @@ Public Class Form1
             Dim url As String = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + coord + "&CooFrame=FK5&CooEpoch=2000&CooEqui=2000&CooDefinedFrames=none&Radius=2&Radius.unit=arcmin&submit=submit+query&CoordList="
             Dim request As WebRequest = WebRequest.Create(url)
             Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-            Dim document As New HtmlAgilityPack.HtmlDocument()
 
 
 
