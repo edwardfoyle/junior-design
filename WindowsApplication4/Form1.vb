@@ -147,7 +147,7 @@ Public Class Form1
     Private Sub asyncQuery(Form1 As Form1)
         Dim proc As New Process()
         ' TODO: change this to a dynamic path at some point
-        proc.StartInfo.FileName = "C:\python27\python.exe"
+        proc.StartInfo.FileName = "C:\Python27\python.exe"
         Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
         Dim imPath As String
         If useDefaultImage Then
@@ -155,8 +155,8 @@ Public Class Form1
         Else
             imPath = Path.Combine(Environment.CurrentDirectory, snapshotName)
         End If
-        proc.StartInfo.Arguments = pyPath + " -k ahhxdcgzhkqyxwas -u " + imPath + " -w"
-        proc.StartInfo.CreateNoWindow = True
+        proc.StartInfo.Arguments = """" + pyPath + """" + " -k ahhxdcgzhkqyxwas -u " + """" + imPath + """" + " -w"
+        proc.StartInfo.CreateNoWindow = False
         proc.StartInfo.UseShellExecute = False
         proc.StartInfo.RedirectStandardOutput = True
         proc.Start()
@@ -254,5 +254,10 @@ Public Class Form1
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         getNearbyObject()
+    End Sub
+
+    Private Sub RecordDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecordDataToolStripMenuItem.Click
+        Dim record As New Record
+        record.Show()
     End Sub
 End Class

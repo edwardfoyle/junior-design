@@ -46,6 +46,7 @@ Partial Class Form1
         Me.DisplayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecordDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.picCapture = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,7 +191,7 @@ Partial Class Form1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.RecordDataToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1011, 28)
@@ -244,6 +245,12 @@ Partial Class Form1
         Me.AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
         Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
+        '
+        'RecordDataToolStripMenuItem
+        '
+        Me.RecordDataToolStripMenuItem.Name = "RecordDataToolStripMenuItem"
+        Me.RecordDataToolStripMenuItem.Size = New System.Drawing.Size(104, 24)
+        Me.RecordDataToolStripMenuItem.Text = "Record Data"
         '
         'picCapture
         '
@@ -311,4 +318,5 @@ Partial Class Form1
     Friend WithEvents DisplayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NoviceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdvancedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecordDataToolStripMenuItem As ToolStripMenuItem
 End Class
