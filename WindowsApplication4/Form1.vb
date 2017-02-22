@@ -102,7 +102,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
+    Private Sub btnAlign_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlign.Click
         Dim data As IDataObject
         Dim bmap As Image
         Using loWindow As New System.Windows.Forms.Form
@@ -223,7 +223,7 @@ Public Class Form1
         Label4.Visible = Not Label4.Visible
         SlewBtn.Visible = Not SlewBtn.Visible
         picCapture.Location = camPos
-        btnSave.Location = New Point(camPos.X + 0.25 * picCapture.Size.Width, camPos.Y + 315)
+        btnAlign.Location = New Point(camPos.X + 0.25 * picCapture.Size.Width, camPos.Y + 315)
     End Sub
 
     Private Sub AdvancedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdvancedToolStripMenuItem.Click
