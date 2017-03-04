@@ -12,7 +12,7 @@ Public Class Record
     End Sub
 
     Private Sub Record_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        workbook = APP.Workbooks.Open("Path\temp.xlsx")
+        workbook = APP.Workbooks.Add("C:\Users\Austin\Desktop\temp.xlsx")
         worksheet = workbook.Worksheets("sheet1")
     End Sub
 End Class

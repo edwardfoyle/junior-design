@@ -260,4 +260,37 @@ Public Class Form1
         Dim record As New Record
         record.Show()
     End Sub
+
+    Private Sub NewMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewMacroToolStripMenuItem.Click
+        Dim macro As New Macro
+        macro.Show()
+    End Sub
+
+    Private Sub OpenMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMacroToolStripMenuItem.Click
+        Dim result As DialogResult = MacroFileDialog.ShowDialog()
+
+        Dim macro As New Macro
+
+        If result = Windows.Forms.DialogResult.OK Then
+
+            ' Get the file name.
+            Dim path As String = MacroFileDialog.FileName
+            Try
+                ' Read in text. 
+                Dim text As String = File.ReadAllText(path)
+                macro.MacroText.Text = text
+                macro.setCurrentFile(path)
+                macro.Show()
+                ' For debugging.
+
+
+            Catch ex As Exception
+
+                ' Report an error.
+                Me.Text = "Error"
+
+            End Try
+        End If
+
+    End Sub
 End Class
