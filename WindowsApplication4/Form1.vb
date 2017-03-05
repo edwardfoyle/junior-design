@@ -150,10 +150,12 @@ Public Class Form1
         proc.StartInfo.FileName = "C:\Python27\python.exe"
         Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
         Dim imPath As String
+        Dim snapshot As Boolean = False
         If useDefaultImage Then
             imPath = Path.Combine(Environment.CurrentDirectory, defaultImage)
         Else
-            imPath = Path.Combine(Environment.CurrentDirectory, snapshotName)
+            imPath = Path.Combine(Environment.SpecialFolder.Desktop, snapshotName)
+            snapshot = True
         End If
         proc.StartInfo.Arguments = """" + pyPath + """" + " -k ahhxdcgzhkqyxwas -u " + """" + imPath + """" + " -w"
         proc.StartInfo.CreateNoWindow = False
@@ -172,6 +174,10 @@ Public Class Form1
         Dim ra As Double = jsonObj.Item("ra")
         Dim dec As Double = jsonObj.Item("dec")
         Form1.setRaDecRes(ra, dec, stdout)
+        If snapshot Then
+            My.Computer.FileSystem.DeleteFile(imPath)
+            snapshot = False
+        End If
     End Sub
 
     Public Sub setRaDecRes(ra As Double, dec As Double, raw As String)
