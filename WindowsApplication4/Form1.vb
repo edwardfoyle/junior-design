@@ -150,10 +150,12 @@ Public Class Form1
         proc.StartInfo.FileName = "C:\python27\python.exe"
         Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
         Dim imPath As String
+        Dim snapshot As Boolean = False
         If useDefaultImage Then
             imPath = Path.Combine(Environment.CurrentDirectory, defaultImage)
         Else
-            imPath = Path.Combine(Environment.CurrentDirectory, snapshotName)
+            imPath = Path.Combine(Environment.SpecialFolder.Desktop, snapshotName)
+            snapshot = True
         End If
         proc.StartInfo.Arguments = pyPath + " -k ahhxdcgzhkqyxwas -u " + imPath + " -w"
         proc.StartInfo.CreateNoWindow = True
@@ -172,6 +174,10 @@ Public Class Form1
         Dim ra As Double = jsonObj.Item("ra")
         Dim dec As Double = jsonObj.Item("dec")
         Form1.setRaDecRes(ra, dec, stdout)
+        If snapshot Then
+            My.Computer.FileSystem.DeleteFile(imPath)
+            snapshot = False
+        End If
     End Sub
 
     Public Sub setRaDecRes(ra As Double, dec As Double, raw As String)
@@ -235,24 +241,5 @@ Public Class Form1
             AdvancedToolStripMenuItem.Checked = True
             switchMode(advancedCamPos)
         End If
-    End Sub
-
-    Private Sub getNearbyObject()
-        If objTelescope IsNot Nothing Then
-            Dim RA As Integer = objTelescope.RightAscension
-            Dim Dec As Integer = objTelescope.Declination
-            Dim coord As String = CStr(RA) + "%3A00%3A00-" + CStr(Dec) + "00%3A00%3A00"
-            Dim url As String = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + coord + "&CooFrame=FK5&CooEpoch=2000&CooEqui=2000&CooDefinedFrames=none&Radius=2&Radius.unit=arcmin&submit=submit+query&CoordList="
-            Dim request As WebRequest = WebRequest.Create(url)
-            Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-            Dim document As New HtmlAgilityPack.HtmlDocument()
-
-
-
-        End If
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
-        getNearbyObject()
     End Sub
 End Class
