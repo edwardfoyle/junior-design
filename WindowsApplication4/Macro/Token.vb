@@ -8,9 +8,15 @@
         Me.str = str
     End Sub
 
+    Public Overrides Function ToString() As String
+        Return str.ToUpper()
+    End Function
+
     Public Enum TokenType
+        Begin
         ForBegin
         Dots
+        Colon
         ForLoop
         EndFor
         Park
