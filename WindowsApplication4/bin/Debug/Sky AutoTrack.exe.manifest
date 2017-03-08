@@ -227,14 +227,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sky AutoTrack.exe" size="397280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sky AutoTrack.exe" size="397792">
       <assemblyIdentity name="Sky AutoTrack" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yykCDjegTUf0h8XNQ5iVWH40pMipA5bPezf+sfSOVYE=</dsig:DigestValue>
+        <dsig:DigestValue>yz9QutAlVwEjkVxZQf0VgYC3BFjuH9pNjDMvPohFQeA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
