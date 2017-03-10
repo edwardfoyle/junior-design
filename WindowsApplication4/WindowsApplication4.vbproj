@@ -185,7 +185,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Macro\MacroScanner.vb" />
-    <Compile Include="Macro\MarcoParser.vb" />
+    <Compile Include="Macro\MacroParser.vb" />
     <Compile Include="Macro\Nonterminal.vb" />
     <Compile Include="Macro\ParseNode.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

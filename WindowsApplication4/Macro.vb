@@ -10,9 +10,7 @@
     Private Sub RunMacroButton_Click(sender As Object, e As EventArgs) Handles RunMacroButton.Click
         'MacroText.Text = currentFileName
         Dim tokens As LinkedList(Of Token) = lexer.scan(MacroText.Text)
-        For Each t As Token In tokens
-            Console.WriteLine(t.ToString())
-        Next
+        Dim parser As New MacroParser(tokens)
     End Sub
 
     Private Sub OpenMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMacroToolStripMenuItem.Click
@@ -21,5 +19,9 @@
 
     Private Sub SaveMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveMacroToolStripMenuItem.Click
         My.Computer.FileSystem.WriteAllText(currentFileName, MacroText.Text, False)
+    End Sub
+
+    Private Sub FileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.Click
+
     End Sub
 End Class

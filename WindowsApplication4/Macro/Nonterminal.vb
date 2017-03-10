@@ -1,7 +1,10 @@
 ﻿Public Class Nonterminal
     Inherits ParseNode
-    Dim str As NonterminalType
-    Dim children As LinkedList(Of ParseNode)
+    Dim type As NonterminalType
+
+    Public Sub New(type As NonterminalType)
+        Me.type = type
+    End Sub
 
     Public Enum NonterminalType
         Program

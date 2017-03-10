@@ -12,11 +12,26 @@
         Return str.ToUpper()
     End Function
 
+    Public Overrides Function Equals(obj As Object) As Boolean
+        Dim toke As Token = CType(obj, Token)
+        If toke.type.Equals(Me.type) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function isType(type As TokenType) As Boolean
+        Return type.Equals(Me.type)
+    End Function
+
     Public Enum TokenType
         Begin
         ForBegin
+        Done
         Dots
         Colon
+        Comma
         ForLoop
         EndFor
         Park
