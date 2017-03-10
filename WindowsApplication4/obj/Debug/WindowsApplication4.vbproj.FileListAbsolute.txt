@@ -90,3 +90,4 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Sky AutoTrack.pdb
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\skyAutoTrack.Record.resources
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\skyAutoTrack.Macro.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Interop.Scripting.dll

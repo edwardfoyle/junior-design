@@ -1,5 +1,5 @@
 ﻿Public Class Token
-
+    Inherits ParseNode
     Dim type As TokenType
     Dim str As String
 

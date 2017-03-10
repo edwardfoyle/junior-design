@@ -9,7 +9,7 @@ Imports Newtonsoft.Json.Linq
 
 Public Class Form1
 
-    Private objTelescope As ASCOM.DriverAccess.Telescope
+    Public objTelescope As ASCOM.DriverAccess.Telescope
     Private snapshotName As String = "snapshot.jpg" ' DO NOT CHANGE
     Private defaultImage As String = "starsTest.jpg" ' DO NOT CHANGE
     Private useDefaultImage As Boolean = True
