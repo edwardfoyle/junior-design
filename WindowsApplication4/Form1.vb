@@ -9,7 +9,7 @@ Imports Newtonsoft.Json.Linq
 
 Public Class Form1
 
-    Private objTelescope As ASCOM.DriverAccess.Telescope
+    Public objTelescope As ASCOM.DriverAccess.Telescope
     Private snapshotName As String = "snapshot.jpg" ' DO NOT CHANGE
     Private defaultImage As String = "starsTest.jpg" ' DO NOT CHANGE
     Private useDefaultImage As Boolean = True
@@ -103,7 +103,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
+    Private Sub btnAlign_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlign.Click
         Dim data As IDataObject
         Dim bmap As Image
         Using loWindow As New System.Windows.Forms.Form
@@ -151,7 +151,7 @@ Public Class Form1
     Private Sub asyncQuery(Form1 As Form1)
         Dim proc As New Process()
         ' TODO: change this to a dynamic path at some point
-        proc.StartInfo.FileName = "C:\python27\python.exe"
+        proc.StartInfo.FileName = "C:\Python27\python.exe"
         Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
         Dim imPath As String
         Dim snapshot As Boolean = False
@@ -161,8 +161,8 @@ Public Class Form1
             imPath = Path.Combine(Environment.SpecialFolder.Desktop, snapshotName)
             snapshot = True
         End If
-        proc.StartInfo.Arguments = pyPath + " -k ahhxdcgzhkqyxwas -u " + imPath + " -w"
-        proc.StartInfo.CreateNoWindow = True
+        proc.StartInfo.Arguments = """" + pyPath + """" + " -k ahhxdcgzhkqyxwas -u " + """" + imPath + """" + " -w"
+        proc.StartInfo.CreateNoWindow = False
         proc.StartInfo.UseShellExecute = False
         proc.StartInfo.RedirectStandardOutput = True
         proc.Start()
@@ -236,7 +236,7 @@ Public Class Form1
         Label4.Visible = Not Label4.Visible
         SlewBtn.Visible = Not SlewBtn.Visible
         picCapture.Location = camPos
-        btnSave.Location = New Point(camPos.X + 0.25 * picCapture.Size.Width, camPos.Y + 315)
+        btnAlign.Location = New Point(camPos.X + 0.25 * picCapture.Size.Width, camPos.Y + 315)
     End Sub
 
     Private Sub AdvancedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdvancedToolStripMenuItem.Click
@@ -248,5 +248,43 @@ Public Class Form1
             AdvancedToolStripMenuItem.Checked = True
             switchMode(advancedCamPos)
         End If
+    End Sub
+
+    Private Sub RecordDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecordDataToolStripMenuItem.Click
+        Dim record As New Record
+        record.Show()
+    End Sub
+
+    Private Sub NewMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewMacroToolStripMenuItem.Click
+        Dim macro As New Macro
+        macro.Show()
+    End Sub
+
+    Private Sub OpenMacroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMacroToolStripMenuItem.Click
+        Dim result As DialogResult = MacroFileDialog.ShowDialog()
+
+        Dim macro As New Macro
+
+        If result = Windows.Forms.DialogResult.OK Then
+
+            ' Get the file name.
+            Dim path As String = MacroFileDialog.FileName
+            Try
+                ' Read in text. 
+                Dim text As String = File.ReadAllText(path)
+                macro.MacroText.Text = text
+                macro.setCurrentFile(path)
+                macro.Show()
+                ' For debugging.
+
+
+            Catch ex As Exception
+
+                ' Report an error.
+                Me.Text = "Error"
+
+            End Try
+        End If
+
     End Sub
 End Class

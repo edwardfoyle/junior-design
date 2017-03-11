@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.btnChoose = New System.Windows.Forms.Button()
         Me.btnConnect = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnAlign = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SlewBtn = New System.Windows.Forms.Button()
         Me.TextDec = New System.Windows.Forms.TextBox()
@@ -46,6 +46,12 @@ Partial Class Form1
         Me.DisplayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecordDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewMacroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenMacroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RunMacroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MacroFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.picCapture = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,15 +77,15 @@ Partial Class Form1
         Me.btnConnect.Text = "Connect"
         Me.btnConnect.UseVisualStyleBackColor = True
         '
-        'btnSave
+        'btnAlign
         '
-        Me.btnSave.Location = New System.Drawing.Point(660, 430)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(163, 32)
-        Me.btnSave.TabIndex = 6
-        Me.btnSave.Text = "Automatically Align"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnAlign.Location = New System.Drawing.Point(660, 430)
+        Me.btnAlign.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAlign.Name = "btnAlign"
+        Me.btnAlign.Size = New System.Drawing.Size(163, 32)
+        Me.btnAlign.TabIndex = 6
+        Me.btnAlign.Text = "Automatically Align"
+        Me.btnAlign.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -190,7 +196,7 @@ Partial Class Form1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.RecordDataToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1011, 28)
@@ -245,6 +251,41 @@ Partial Class Form1
         Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
         '
+        'RecordDataToolStripMenuItem
+        '
+        Me.RecordDataToolStripMenuItem.Name = "RecordDataToolStripMenuItem"
+        Me.RecordDataToolStripMenuItem.Size = New System.Drawing.Size(104, 24)
+        Me.RecordDataToolStripMenuItem.Text = "Record Data"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewMacroToolStripMenuItem, Me.OpenMacroToolStripMenuItem, Me.RunMacroToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'NewMacroToolStripMenuItem
+        '
+        Me.NewMacroToolStripMenuItem.Name = "NewMacroToolStripMenuItem"
+        Me.NewMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.NewMacroToolStripMenuItem.Text = "New Macro"
+        '
+        'OpenMacroToolStripMenuItem
+        '
+        Me.OpenMacroToolStripMenuItem.Name = "OpenMacroToolStripMenuItem"
+        Me.OpenMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.OpenMacroToolStripMenuItem.Text = "Open Macro"
+        '
+        'RunMacroToolStripMenuItem
+        '
+        Me.RunMacroToolStripMenuItem.Name = "RunMacroToolStripMenuItem"
+        Me.RunMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.RunMacroToolStripMenuItem.Text = "Run Macro"
+        '
+        'MacroFileDialog
+        '
+        Me.MacroFileDialog.FileName = "MacroFileDialog"
+        '
         'picCapture
         '
         Me.picCapture.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -269,7 +310,7 @@ Partial Class Form1
         Me.Controls.Add(Me.SlewBtn)
         Me.Controls.Add(Me.TextDec)
         Me.Controls.Add(Me.TextRA)
-        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnAlign)
         Me.Controls.Add(Me.btnConnect)
         Me.Controls.Add(Me.tbTelescope)
         Me.Controls.Add(Me.btnChoose)
@@ -290,7 +331,7 @@ Partial Class Form1
     Friend WithEvents btnChoose As Button
     Friend WithEvents tbTelescope As TextBox
     Friend WithEvents btnConnect As Button
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnAlign As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents TextRA As TextBox
     Friend WithEvents TextDec As TextBox
@@ -311,4 +352,10 @@ Partial Class Form1
     Friend WithEvents DisplayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NoviceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdvancedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecordDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NewMacroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenMacroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RunMacroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MacroFileDialog As OpenFileDialog
 End Class

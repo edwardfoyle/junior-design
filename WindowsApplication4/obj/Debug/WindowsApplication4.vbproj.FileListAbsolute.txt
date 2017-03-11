@@ -69,7 +69,6 @@ C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-des
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.application
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.exe
 C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\Sky AutoTrack.pdb
-<<<<<<< HEAD
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\Sky AutoTrack.exe.config
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Sky AutoTrack.exe
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Sky AutoTrack.xml
@@ -87,6 +86,9 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Sky AutoTrack.exe.manifest
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Sky AutoTrack.application
-=======
-C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Debug\skyAutoTrack.Form2.resources
->>>>>>> 99d80f761ef47810b0387301aeff2c44196de504
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\skyAutoTrack.Record.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\skyAutoTrack.Macro.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Debug\Interop.Scripting.dll
+>>>>>>> data
