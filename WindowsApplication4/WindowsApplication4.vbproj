@@ -32,7 +32,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -55,7 +55,7 @@
     <OptionExplicit>On</OptionExplicit>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
+    <OptionCompare>Text</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
@@ -70,7 +70,7 @@
     <ManifestKeyFile>WindowsApplication4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -97,6 +97,12 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ASCOM.Astrometry, Version=6.0.0.0, Culture=neutral, PublicKeyToken=565de7938946fba7, processorArchitecture=MSIL" />
@@ -156,6 +162,17 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Macro.Designer.vb">
+      <DependentUpon>Macro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Macro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Macro\MacroParser.vb" />
+    <Compile Include="Macro\MacroScanner.vb" />
+    <Compile Include="Macro\Nonterminal.vb" />
+    <Compile Include="Macro\ParseNode.vb" />
+    <Compile Include="Macro\Token.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -171,6 +188,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Record.Designer.vb">
+      <DependentUpon>Record.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Record.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserControl1.Designer.vb">
       <DependentUpon>UserControl1.vb</DependentUpon>
     </Compile>
@@ -185,17 +208,56 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Macro.resx">
+      <DependentUpon>Macro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Record.resx">
+      <DependentUpon>Record.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Sky AutoTrack.exe.config" />
+    <None Include="bin\Debug\Sky AutoTrack.vshost.exe.config" />
+    <None Include="bin\Release\Sky AutoTrack.application" />
+    <None Include="bin\Release\Sky AutoTrack.exe.config" />
+    <None Include="bin\Release\Sky AutoTrack.exe.manifest" />
+    <None Include="bin\Release\Sky AutoTrack.vshost.application" />
+    <None Include="bin\Release\Sky AutoTrack.vshost.exe.config" />
+    <None Include="bin\Release\Sky AutoTrack.vshost.exe.manifest" />
+    <None Include="bin\Release\WindowsApplication4.vshost.application" />
+    <None Include="bin\Release\WindowsApplication4.vshost.exe.config" />
+    <None Include="bin\Release\WindowsApplication4.vshost.exe.manifest" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.application" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.exe.config" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.exe.manifest" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.vshost.application" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.vshost.exe.config" />
+    <None Include="bin\x64\Debug\Sky AutoTrack.vshost.exe.manifest" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.application" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.exe.config" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.exe.manifest" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.vshost.application" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.vshost.exe.config" />
+    <None Include="bin\x86\Debug\Sky AutoTrack.vshost.exe.manifest" />
+    <None Include="bin\x86\Debug\WindowsApplication4.vshost.application" />
+    <None Include="bin\x86\Debug\WindowsApplication4.vshost.exe.config" />
+    <None Include="bin\x86\Debug\WindowsApplication4.vshost.exe.manifest" />
+    <None Include="bin\x86\Release\WindowsApplication4.application" />
+    <None Include="bin\x86\Release\WindowsApplication4.exe.config" />
+    <None Include="bin\x86\Release\WindowsApplication4.exe.manifest" />
+    <None Include="bin\x86\Release\WindowsApplication4.vshost.application" />
+    <None Include="bin\x86\Release\WindowsApplication4.vshost.exe.config" />
+    <None Include="bin\x86\Release\WindowsApplication4.vshost.exe.manifest" />
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -217,6 +279,15 @@
       <Lcid>0</Lcid>
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
@@ -244,6 +315,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\x64\Release\" />
     <Folder Include="Resources\x64\" />
     <Folder Include="x86\" />
   </ItemGroup>
@@ -252,6 +324,142 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\starsTest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Sky AutoTrack.vshost.exe" />
+    <Content Include="bin\Release\app.publish\Sky AutoTrack.exe" />
+    <Content Include="bin\Release\ASCOM.Astrometry.dll" />
+    <Content Include="bin\Release\ASCOM.Astrometry.xml" />
+    <Content Include="bin\Release\ASCOM.Attributes.dll" />
+    <Content Include="bin\Release\ASCOM.Attributes.xml" />
+    <Content Include="bin\Release\ASCOM.Controls.dll" />
+    <Content Include="bin\Release\ASCOM.Controls.xml" />
+    <Content Include="bin\Release\ASCOM.DeviceInterfaces.dll" />
+    <Content Include="bin\Release\ASCOM.DeviceInterfaces.xml" />
+    <Content Include="bin\Release\ASCOM.DriverAccess.dll" />
+    <Content Include="bin\Release\ASCOM.DriverAccess.xml" />
+    <Content Include="bin\Release\ASCOM.Exceptions.dll" />
+    <Content Include="bin\Release\ASCOM.Exceptions.xml" />
+    <Content Include="bin\Release\ASCOM.Internal.Extensions.dll" />
+    <Content Include="bin\Release\ASCOM.Internal.Extensions.xml" />
+    <Content Include="bin\Release\ASCOM.SettingsProvider.dll" />
+    <Content Include="bin\Release\ASCOM.SettingsProvider.xml" />
+    <Content Include="bin\Release\ASCOM.Utilities.dll" />
+    <Content Include="bin\Release\ASCOM.Utilities.Video.dll" />
+    <Content Include="bin\Release\ASCOM.Utilities.xml" />
+    <Content Include="bin\Release\AxInterop.WMPLib.dll" />
+    <Content Include="bin\Release\client25.py" />
+    <Content Include="bin\Release\Emgu.CV.World.dll" />
+    <Content Include="bin\Release\Emgu.CV.World.xml" />
+    <Content Include="bin\Release\HtmlAgilityPack.dll" />
+    <Content Include="bin\Release\HtmlAgilityPack.pdb" />
+    <Content Include="bin\Release\HtmlAgilityPack.xml" />
+    <Content Include="bin\Release\Interop.WMPLib.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\Release\Sky AutoTrack.exe" />
+    <Content Include="bin\Release\Sky AutoTrack.pdb" />
+    <Content Include="bin\Release\Sky AutoTrack.vshost.exe" />
+    <Content Include="bin\Release\Sky AutoTrack.xml" />
+    <Content Include="bin\Release\starsTest.jpg" />
+    <Content Include="bin\Release\WindowsApplication4.vshost.exe" />
+    <Content Include="bin\TouchlessLib.dll" />
+    <Content Include="bin\WebCamLib.dll" />
+    <Content Include="bin\x64\Debug\app.publish\Sky AutoTrack.exe" />
+    <Content Include="bin\x64\Debug\ASCOM.Astrometry.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Astrometry.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.Attributes.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Attributes.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.Controls.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Controls.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.DeviceInterfaces.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.DeviceInterfaces.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.DriverAccess.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.DriverAccess.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.Exceptions.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Exceptions.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.Internal.Extensions.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Internal.Extensions.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.SettingsProvider.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.SettingsProvider.xml" />
+    <Content Include="bin\x64\Debug\ASCOM.Utilities.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Utilities.Video.dll" />
+    <Content Include="bin\x64\Debug\ASCOM.Utilities.xml" />
+    <Content Include="bin\x64\Debug\AxInterop.WMPLib.dll" />
+    <Content Include="bin\x64\Debug\Emgu.CV.World.dll" />
+    <Content Include="bin\x64\Debug\Emgu.CV.World.xml" />
+    <Content Include="bin\x64\Debug\HtmlAgilityPack.dll" />
+    <Content Include="bin\x64\Debug\HtmlAgilityPack.pdb" />
+    <Content Include="bin\x64\Debug\HtmlAgilityPack.xml" />
+    <Content Include="bin\x64\Debug\Interop.WMPLib.dll" />
+    <Content Include="bin\x64\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\x64\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\x64\Debug\Sky AutoTrack.exe" />
+    <Content Include="bin\x64\Debug\Sky AutoTrack.pdb" />
+    <Content Include="bin\x64\Debug\Sky AutoTrack.vshost.exe" />
+    <Content Include="bin\x64\Debug\Sky AutoTrack.xml" />
+    <Content Include="bin\x86\Debug\app.publish\Sky AutoTrack.exe" />
+    <Content Include="bin\x86\Debug\ASCOM.Astrometry.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Astrometry.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.Attributes.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Attributes.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.Controls.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Controls.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.DeviceInterfaces.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.DeviceInterfaces.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.DriverAccess.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.DriverAccess.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.Exceptions.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Exceptions.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.Internal.Extensions.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Internal.Extensions.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.SettingsProvider.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.SettingsProvider.xml" />
+    <Content Include="bin\x86\Debug\ASCOM.Utilities.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Utilities.Video.dll" />
+    <Content Include="bin\x86\Debug\ASCOM.Utilities.xml" />
+    <Content Include="bin\x86\Debug\AxInterop.WMPLib.dll" />
+    <Content Include="bin\x86\Debug\Emgu.CV.World.dll" />
+    <Content Include="bin\x86\Debug\Emgu.CV.World.xml" />
+    <Content Include="bin\x86\Debug\HtmlAgilityPack.dll" />
+    <Content Include="bin\x86\Debug\HtmlAgilityPack.pdb" />
+    <Content Include="bin\x86\Debug\HtmlAgilityPack.xml" />
+    <Content Include="bin\x86\Debug\Interop.WMPLib.dll" />
+    <Content Include="bin\x86\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\x86\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\x86\Debug\Sky AutoTrack.exe" />
+    <Content Include="bin\x86\Debug\Sky AutoTrack.pdb" />
+    <Content Include="bin\x86\Debug\Sky AutoTrack.vshost.exe" />
+    <Content Include="bin\x86\Debug\Sky AutoTrack.xml" />
+    <Content Include="bin\x86\Debug\WindowsApplication4.vshost.exe" />
+    <Content Include="bin\x86\Release\app.publish\WindowsApplication4.exe" />
+    <Content Include="bin\x86\Release\ASCOM.Astrometry.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Astrometry.xml" />
+    <Content Include="bin\x86\Release\ASCOM.Attributes.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Attributes.xml" />
+    <Content Include="bin\x86\Release\ASCOM.Controls.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Controls.xml" />
+    <Content Include="bin\x86\Release\ASCOM.DeviceInterfaces.dll" />
+    <Content Include="bin\x86\Release\ASCOM.DeviceInterfaces.xml" />
+    <Content Include="bin\x86\Release\ASCOM.DriverAccess.dll" />
+    <Content Include="bin\x86\Release\ASCOM.DriverAccess.xml" />
+    <Content Include="bin\x86\Release\ASCOM.Exceptions.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Exceptions.xml" />
+    <Content Include="bin\x86\Release\ASCOM.Internal.Extensions.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Internal.Extensions.xml" />
+    <Content Include="bin\x86\Release\ASCOM.SettingsProvider.dll" />
+    <Content Include="bin\x86\Release\ASCOM.SettingsProvider.xml" />
+    <Content Include="bin\x86\Release\ASCOM.Utilities.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Utilities.Video.dll" />
+    <Content Include="bin\x86\Release\ASCOM.Utilities.xml" />
+    <Content Include="bin\x86\Release\AxInterop.WMPLib.dll" />
+    <Content Include="bin\x86\Release\Emgu.CV.World.dll" />
+    <Content Include="bin\x86\Release\Emgu.CV.World.xml" />
+    <Content Include="bin\x86\Release\Interop.WMPLib.dll" />
+    <Content Include="bin\x86\Release\WindowsApplication4.exe" />
+    <Content Include="bin\x86\Release\WindowsApplication4.pdb" />
+    <Content Include="bin\x86\Release\WindowsApplication4.vshost.exe" />
+    <Content Include="bin\x86\Release\WindowsApplication4.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
