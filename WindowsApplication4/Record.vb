@@ -27,7 +27,7 @@ Public Class Record
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If recording Then
-            strLine = System.DateTime.Now().ToString() + "," + Form1.objTelescope.RightAscension.ToString() + "," + Form1.objTelescope.Declination.ToString()
+            strLine = System.DateTime.Now().ToString() + "," + Main.objTelescope.RightAscension.ToString() + "," + Main.objTelescope.Declination.ToString()
             fsoStream.WriteLine(strLine)
             currData.AppendText(strLine + vbNewLine)
         End If
