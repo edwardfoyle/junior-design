@@ -252,9 +252,6 @@ Public Class Form1
             Dim url As String = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + coord + "&CooFrame=FK5&CooEpoch=2000&CooEqui=2000&CooDefinedFrames=none&Radius=2&Radius.unit=arcmin&submit=submit+query&CoordList="
             Dim request As WebRequest = WebRequest.Create(url)
             Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-
-
-
         End If
     End Sub
 
