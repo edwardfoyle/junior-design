@@ -16,6 +16,7 @@ Public Class Main
     Private noviceMode As Boolean = True
     Private clicked As Boolean = False
     Private video As New VideoFeed
+    Private api As New APIManager
 
     'Opens the ASCOM Chooser
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
@@ -64,44 +65,7 @@ Public Class Main
 
     Private Sub queryAPI_Click(sender As Object, e As EventArgs) Handles queryAPI.Click
         queryResults.Text = "Solving Image..."
-        Dim thread As New System.Threading.Thread(Sub() asyncQuery(Me))
-        thread.Start()
-    End Sub
-
-    Private Sub asyncQuery(Form1 As Main)
-        Dim proc As New Process()
-        ' TODO: change this to a dynamic path at some point
-        proc.StartInfo.FileName = "C:\Python27\python.exe"
-        Dim pyPath As String = Path.Combine(Environment.CurrentDirectory, "client25.py")
-        Dim imPath As String
-        Dim snapshot As Boolean = False
-        If useDefaultImage Then
-            imPath = Path.Combine(Environment.CurrentDirectory, defaultImage)
-        Else
-            imPath = Path.Combine(Environment.SpecialFolder.Desktop, snapshotName)
-            snapshot = True
-        End If
-        proc.StartInfo.Arguments = """" + pyPath + """" + " -k ahhxdcgzhkqyxwas -u " + """" + imPath + """" + " -w"
-        proc.StartInfo.CreateNoWindow = False
-        proc.StartInfo.UseShellExecute = False
-        proc.StartInfo.RedirectStandardOutput = True
-        proc.Start()
-        Dim stdout As String
-        Using outStreamReader As StreamReader = proc.StandardOutput
-            stdout = outStreamReader.ReadToEnd()
-        End Using
-        ' regular expression to match the last json object returned from the API query
-        Dim pattern As String = "{((?!{).)*}\s*$"
-        Dim match As Match = Regex.Match(stdout, pattern)
-        stdout = match.Value
-        Dim jsonObj As JObject = JObject.Parse(stdout)
-        Dim ra As Double = jsonObj.Item("ra")
-        Dim dec As Double = jsonObj.Item("dec")
-        Form1.setRaDecRes(ra, dec, stdout)
-        If snapshot Then
-            My.Computer.FileSystem.DeleteFile(imPath)
-            snapshot = False
-        End If
+        api.Query(Me, useDefaultImage, snapshotName, defaultImage)
     End Sub
 
     Public Sub setRaDecRes(ra As Double, dec As Double, raw As String)
