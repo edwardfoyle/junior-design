@@ -1,12 +1,6 @@
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.exe.config
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\AxInterop.WMPLib.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.vbproj.ResolveComReference.cache
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.exe.manifest
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.application
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.exe
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.pdb
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\WindowsApplication4.xml
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\ASCOM.Astrometry.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\ASCOM.Attributes.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\ASCOM.Controls.dll
@@ -30,13 +24,26 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\ASCOM.Exceptions.xml
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Interop.WMPLib.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\AxInterop.WMPLib.dll
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.Form1.resources
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.Resources.resources
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.UserControl1.resources
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.vbproj.GenerateResource.Cache
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.exe.manifest
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.application
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.exe
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.xml
-C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.pdb
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\WindowsApplication4.vbprojResolveAssemblyReference.cache
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.exe.config
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.exe.manifest
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.application
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.exe
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.pdb
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Sky AutoTrack.xml
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\HtmlAgilityPack.dll
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\HtmlAgilityPack.pdb
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\HtmlAgilityPack.xml
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\skyAutoTrack.Form1.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\skyAutoTrack.Form2.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\skyAutoTrack.Resources.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\skyAutoTrack.Record.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\skyAutoTrack.UserControl1.resources
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Sky AutoTrack.exe.manifest
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Sky AutoTrack.application
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Sky AutoTrack.exe
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Sky AutoTrack.xml
+C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\x86\Debug\Sky AutoTrack.pdb
