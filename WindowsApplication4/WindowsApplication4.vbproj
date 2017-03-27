@@ -149,11 +149,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIManager.vb" />
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="util\APIManager.vb" />
+    <Compile Include="LatLong.Designer.vb">
+      <DependentUpon>LatLong.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="LatLong.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.vb">
@@ -207,8 +207,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="LatLong.resx">
+      <DependentUpon>LatLong.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Macro.resx">
       <DependentUpon>Macro.vb</DependentUpon>

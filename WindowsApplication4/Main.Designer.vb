@@ -77,6 +77,7 @@ Partial Class Main
         '
         'btnAlign
         '
+        Me.btnAlign.Enabled = False
         Me.btnAlign.Location = New System.Drawing.Point(660, 430)
         Me.btnAlign.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAlign.Name = "btnAlign"
@@ -167,6 +168,7 @@ Partial Class Main
         '
         'queryAPI
         '
+        Me.queryAPI.Enabled = False
         Me.queryAPI.Location = New System.Drawing.Point(360, 434)
         Me.queryAPI.Margin = New System.Windows.Forms.Padding(4)
         Me.queryAPI.Name = "queryAPI"
@@ -207,19 +209,19 @@ Partial Class Main
         'NewMacroToolStripMenuItem
         '
         Me.NewMacroToolStripMenuItem.Name = "NewMacroToolStripMenuItem"
-        Me.NewMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.NewMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.NewMacroToolStripMenuItem.Text = "New Macro"
         '
         'OpenMacroToolStripMenuItem
         '
         Me.OpenMacroToolStripMenuItem.Name = "OpenMacroToolStripMenuItem"
-        Me.OpenMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.OpenMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.OpenMacroToolStripMenuItem.Text = "Open Macro"
         '
         'RunMacroToolStripMenuItem
         '
         Me.RunMacroToolStripMenuItem.Name = "RunMacroToolStripMenuItem"
-        Me.RunMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.RunMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.RunMacroToolStripMenuItem.Text = "Run Macro"
         '
         'SettingsToolStripMenuItem
@@ -231,15 +233,16 @@ Partial Class Main
         '
         'LocationToolStripMenuItem
         '
+        Me.LocationToolStripMenuItem.Enabled = False
         Me.LocationToolStripMenuItem.Name = "LocationToolStripMenuItem"
-        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.LocationToolStripMenuItem.Text = "Location"
         '
         'VideoDeviceToolStripMenuItem
         '
         Me.VideoDeviceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem})
         Me.VideoDeviceToolStripMenuItem.Name = "VideoDeviceToolStripMenuItem"
-        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.VideoDeviceToolStripMenuItem.Text = "Video Device"
         '
         'ConnectToolStripMenuItem
@@ -253,7 +256,7 @@ Partial Class Main
         Me.DisplayToolStripMenuItem.CheckOnClick = True
         Me.DisplayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoviceToolStripMenuItem, Me.AdvancedToolStripMenuItem})
         Me.DisplayToolStripMenuItem.Name = "DisplayToolStripMenuItem"
-        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.DisplayToolStripMenuItem.Text = "Display"
         '
         'NoviceToolStripMenuItem
@@ -272,6 +275,7 @@ Partial Class Main
         '
         'RecordDataToolStripMenuItem
         '
+        Me.RecordDataToolStripMenuItem.Enabled = False
         Me.RecordDataToolStripMenuItem.Name = "RecordDataToolStripMenuItem"
         Me.RecordDataToolStripMenuItem.Size = New System.Drawing.Size(104, 24)
         Me.RecordDataToolStripMenuItem.Text = "Record Data"
@@ -290,7 +294,7 @@ Partial Class Main
         Me.picCapture.TabIndex = 15
         Me.picCapture.TabStop = False
         '
-        'Form1
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -312,7 +316,7 @@ Partial Class Main
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "Form1"
+        Me.Name = "Main"
         Me.Text = "Sky AutoTrack"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

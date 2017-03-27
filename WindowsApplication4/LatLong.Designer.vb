@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class LatLong
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,9 +24,9 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtLat = New System.Windows.Forms.TextBox()
+        Me.txtLong = New System.Windows.Forms.TextBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -47,41 +47,41 @@ Partial Class Form2
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Longitude"
         '
-        'TextBox1
+        'txtLat
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 44)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.txtLat.Location = New System.Drawing.Point(12, 44)
+        Me.txtLat.Name = "txtLat"
+        Me.txtLat.Size = New System.Drawing.Size(100, 22)
+        Me.txtLat.TabIndex = 2
         '
-        'TextBox2
+        'txtLong
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 109)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox2.TabIndex = 3
+        Me.txtLong.Location = New System.Drawing.Point(12, 109)
+        Me.txtLong.Name = "txtLong"
+        Me.txtLong.Size = New System.Drawing.Size(100, 22)
+        Me.txtLong.TabIndex = 3
         '
-        'Button1
+        'btnUpdate
         '
-        Me.Button1.Location = New System.Drawing.Point(130, 109)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Submit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(130, 109)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 4
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'Form2
+        'LatLong
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(232, 153)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.txtLong)
+        Me.Controls.Add(Me.txtLat)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Name = "LatLong"
+        Me.Text = "Location"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -89,7 +89,7 @@ Partial Class Form2
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txtLat As TextBox
+    Friend WithEvents txtLong As TextBox
+    Friend WithEvents btnUpdate As Button
 End Class
