@@ -48,10 +48,10 @@ Partial Class Main
         Me.DisplayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecordDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MacroFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.picCapture = New System.Windows.Forms.PictureBox()
-        Me.UserSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -274,6 +274,12 @@ Partial Class Main
         Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
         '
+        'UserSettingsToolStripMenuItem
+        '
+        Me.UserSettingsToolStripMenuItem.Name = "UserSettingsToolStripMenuItem"
+        Me.UserSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.UserSettingsToolStripMenuItem.Text = "User Settings"
+        '
         'RecordDataToolStripMenuItem
         '
         Me.RecordDataToolStripMenuItem.Enabled = False
@@ -294,12 +300,6 @@ Partial Class Main
         Me.picCapture.Size = New System.Drawing.Size(375, 368)
         Me.picCapture.TabIndex = 15
         Me.picCapture.TabStop = False
-        '
-        'UserSettingsToolStripMenuItem
-        '
-        Me.UserSettingsToolStripMenuItem.Name = "UserSettingsToolStripMenuItem"
-        Me.UserSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
-        Me.UserSettingsToolStripMenuItem.Text = "User Settings"
         '
         'Main
         '

@@ -133,11 +133,11 @@ Public Class Main
         End If
     End Sub
 
-    Dim noviceCamPos As New Point(225, 47)
-    Dim advancedCamPos As New Point(425, 47)
+    Public noviceCamPos As New Point(225, 47)
+    Public advancedCamPos As New Point(425, 47)
 
     'Helper method to switch between novice and advanced mode
-    Private Sub switchMode(camPos As Point)
+    Public Sub switchMode(camPos As Point)
         queryResults.Visible = Not queryResults.Visible
         queryAPI.Visible = Not queryAPI.Visible
         Label2.Visible = Not Label2.Visible
@@ -201,5 +201,10 @@ Public Class Main
             End Try
         End If
 
+    End Sub
+
+    Private Sub UserSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserSettingsToolStripMenuItem.Click
+        Dim settingsForm As New SettingsForm(Me, mySettings)
+        settingsForm.Show()
     End Sub
 End Class

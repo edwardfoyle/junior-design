@@ -149,6 +149,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SettingsForm.Designer.vb">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserSettings.vb" />
     <Compile Include="util\APIManager.vb" />
     <Compile Include="LatLong.Designer.vb">
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Record.resx">
       <DependentUpon>Record.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.vb</DependentUpon>
