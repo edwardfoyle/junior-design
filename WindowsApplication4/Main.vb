@@ -6,6 +6,7 @@ Imports System.Web
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
+Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class Main
 
@@ -17,6 +18,7 @@ Public Class Main
     Private clicked As Boolean = False
     Private video As New VideoFeed
     Private api As New APIManager
+    Public mySettings As New UserSettings
 
     'Opens the ASCOM Chooser
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
@@ -29,6 +31,26 @@ Public Class Main
     'It is meant for initializing anything in the main application view
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         video.LoadDeviceList(Me.VideoDeviceToolStripMenuItem)
+        If File.Exists("SavedSettings.bin") Then
+            Dim myFileStream As Stream = File.OpenRead("SavedSettings.bin")
+            Dim deserializer As New BinaryFormatter()
+            mySettings = CType(deserializer.Deserialize(myFileStream), UserSettings)
+            myFileStream.Close()
+            If mySettings.mode Then
+                NoviceToolStripMenuItem.Checked = True
+                AdvancedToolStripMenuItem.Checked = False
+                switchMode(noviceCamPos)
+            End If
+        End If
+    End Sub
+
+    'Handles management of persistent object when form closes
+    Private Sub Form1_Close(send As Object, e As EventArgs) Handles MyBase.Closing
+        mySettings.mode = NoviceToolStripMenuItem.Checked
+        Dim myFileStream As Stream = File.Create("SavedSettings.bin")
+        Dim serializer As New BinaryFormatter()
+        serializer.Serialize(myFileStream, mySettings)
+        myFileStream.Close()
     End Sub
 
     'Connects to the selected telescope from the ASCOM Chooser

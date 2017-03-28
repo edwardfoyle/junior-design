@@ -149,6 +149,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserSettings.vb" />
     <Compile Include="util\APIManager.vb" />
     <Compile Include="LatLong.Designer.vb">
       <DependentUpon>LatLong.vb</DependentUpon>

@@ -51,6 +51,7 @@ Partial Class Main
         Me.RecordDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MacroFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.picCapture = New System.Windows.Forms.PictureBox()
+        Me.UserSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picCapture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -209,24 +210,24 @@ Partial Class Main
         'NewMacroToolStripMenuItem
         '
         Me.NewMacroToolStripMenuItem.Name = "NewMacroToolStripMenuItem"
-        Me.NewMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.NewMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.NewMacroToolStripMenuItem.Text = "New Macro"
         '
         'OpenMacroToolStripMenuItem
         '
         Me.OpenMacroToolStripMenuItem.Name = "OpenMacroToolStripMenuItem"
-        Me.OpenMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.OpenMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.OpenMacroToolStripMenuItem.Text = "Open Macro"
         '
         'RunMacroToolStripMenuItem
         '
         Me.RunMacroToolStripMenuItem.Name = "RunMacroToolStripMenuItem"
-        Me.RunMacroToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.RunMacroToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.RunMacroToolStripMenuItem.Text = "Run Macro"
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem, Me.VideoDeviceToolStripMenuItem, Me.DisplayToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem, Me.VideoDeviceToolStripMenuItem, Me.DisplayToolStripMenuItem, Me.UserSettingsToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -294,6 +295,12 @@ Partial Class Main
         Me.picCapture.TabIndex = 15
         Me.picCapture.TabStop = False
         '
+        'UserSettingsToolStripMenuItem
+        '
+        Me.UserSettingsToolStripMenuItem.Name = "UserSettingsToolStripMenuItem"
+        Me.UserSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.UserSettingsToolStripMenuItem.Text = "User Settings"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -355,4 +362,5 @@ Partial Class Main
     Friend WithEvents OpenMacroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RunMacroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MacroFileDialog As OpenFileDialog
+    Friend WithEvents UserSettingsToolStripMenuItem As ToolStripMenuItem
 End Class
