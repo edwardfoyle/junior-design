@@ -57,10 +57,15 @@ Public Class Main
     Private Sub BtnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         objTelescope = New ASCOM.DriverAccess.Telescope(My.Settings.Telescope)
         objTelescope.Connected = True
+        UserSettingsToolStripMenuItem.Enabled = True
         queryAPI.Enabled = True
         btnAlign.Enabled = True
         RecordDataToolStripMenuItem.Enabled = True
         LocationToolStripMenuItem.Enabled = True
+        If Not mySettings Is Nothing Then
+            objTelescope.RightAscensionRate = mySettings.raRate
+            objTelescope.DeclinationRate = mySettings.decRate
+        End If
     End Sub
 
     'Moves the telescope to the coordinates entered into the RA and Dec text boxes 

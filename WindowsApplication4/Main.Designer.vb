@@ -276,6 +276,7 @@ Partial Class Main
         '
         'UserSettingsToolStripMenuItem
         '
+        Me.UserSettingsToolStripMenuItem.Enabled = False
         Me.UserSettingsToolStripMenuItem.Name = "UserSettingsToolStripMenuItem"
         Me.UserSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.UserSettingsToolStripMenuItem.Text = "User Settings"

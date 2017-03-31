@@ -31,6 +31,7 @@ Partial Class Macro
         Me.SaveMacroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RunMacroButton = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -94,6 +95,10 @@ Partial Class Macro
         Me.RunMacroButton.Text = "Run"
         Me.RunMacroButton.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Macro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -121,4 +126,5 @@ Partial Class Macro
     Friend WithEvents SaveMacroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RunMacroButton As Button
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
