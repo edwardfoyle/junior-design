@@ -48,6 +48,7 @@ Partial Class Main
         Me.DisplayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoviceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecordDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MacroFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.picCapture = New System.Windows.Forms.PictureBox()
@@ -77,6 +78,7 @@ Partial Class Main
         '
         'btnAlign
         '
+        Me.btnAlign.Enabled = False
         Me.btnAlign.Location = New System.Drawing.Point(660, 430)
         Me.btnAlign.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAlign.Name = "btnAlign"
@@ -167,6 +169,7 @@ Partial Class Main
         '
         'queryAPI
         '
+        Me.queryAPI.Enabled = False
         Me.queryAPI.Location = New System.Drawing.Point(360, 434)
         Me.queryAPI.Margin = New System.Windows.Forms.Padding(4)
         Me.queryAPI.Name = "queryAPI"
@@ -224,22 +227,23 @@ Partial Class Main
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem, Me.VideoDeviceToolStripMenuItem, Me.DisplayToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocationToolStripMenuItem, Me.VideoDeviceToolStripMenuItem, Me.DisplayToolStripMenuItem, Me.UserSettingsToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'LocationToolStripMenuItem
         '
+        Me.LocationToolStripMenuItem.Enabled = False
         Me.LocationToolStripMenuItem.Name = "LocationToolStripMenuItem"
-        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.LocationToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.LocationToolStripMenuItem.Text = "Location"
         '
         'VideoDeviceToolStripMenuItem
         '
         Me.VideoDeviceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem})
         Me.VideoDeviceToolStripMenuItem.Name = "VideoDeviceToolStripMenuItem"
-        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.VideoDeviceToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.VideoDeviceToolStripMenuItem.Text = "Video Device"
         '
         'ConnectToolStripMenuItem
@@ -253,7 +257,7 @@ Partial Class Main
         Me.DisplayToolStripMenuItem.CheckOnClick = True
         Me.DisplayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoviceToolStripMenuItem, Me.AdvancedToolStripMenuItem})
         Me.DisplayToolStripMenuItem.Name = "DisplayToolStripMenuItem"
-        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(172, 26)
+        Me.DisplayToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.DisplayToolStripMenuItem.Text = "Display"
         '
         'NoviceToolStripMenuItem
@@ -270,8 +274,15 @@ Partial Class Main
         Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AdvancedToolStripMenuItem.Text = "Advanced"
         '
+        'UserSettingsToolStripMenuItem
+        '
+        Me.UserSettingsToolStripMenuItem.Name = "UserSettingsToolStripMenuItem"
+        Me.UserSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.UserSettingsToolStripMenuItem.Text = "User Settings"
+        '
         'RecordDataToolStripMenuItem
         '
+        Me.RecordDataToolStripMenuItem.Enabled = False
         Me.RecordDataToolStripMenuItem.Name = "RecordDataToolStripMenuItem"
         Me.RecordDataToolStripMenuItem.Size = New System.Drawing.Size(104, 24)
         Me.RecordDataToolStripMenuItem.Text = "Record Data"
@@ -290,7 +301,7 @@ Partial Class Main
         Me.picCapture.TabIndex = 15
         Me.picCapture.TabStop = False
         '
-        'Form1
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -312,7 +323,7 @@ Partial Class Main
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "Form1"
+        Me.Name = "Main"
         Me.Text = "Sky AutoTrack"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -351,4 +362,5 @@ Partial Class Main
     Friend WithEvents OpenMacroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RunMacroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MacroFileDialog As OpenFileDialog
+    Friend WithEvents UserSettingsToolStripMenuItem As ToolStripMenuItem
 End Class
