@@ -45,3 +45,11 @@ C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\Window
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\obj\Release\Sky AutoTrack.pdb
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Release\Newtonsoft.Json.dll
 C:\Users\Austin\Documents\Visual Studio 2015\Projects\WindowsApplication4\WindowsApplication4\bin\Release\Newtonsoft.Json.xml
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\bin\Release\Sky AutoTrack.exe.config
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\Interop.Scripting.dll
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\Interop.WMPLib.dll
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\AxInterop.WMPLib.dll
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\WindowsApplication4.vbproj.ResolveComReference.cache
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\Sky AutoTrack.exe
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\Sky AutoTrack.xml
+C:\Users\Edward\SkyDrive\Documents\GaTech\Courses\04SeniorYear\CS3312\junior-design\WindowsApplication4\obj\Release\Sky AutoTrack.pdb

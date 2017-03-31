@@ -20,12 +20,50 @@ namespace jr_design
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
+        public MainWindow() {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void rightAscension_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void declination_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void chooseTelescope_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void connectTelescope_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void slew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void queryAPI_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void autoAlign_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
         }
