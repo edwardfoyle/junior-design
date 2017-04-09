@@ -88,6 +88,54 @@ Partial Friend NotInheritable Class MySettings
             Me("Dec") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+    Public Property Lattitude() As Double
+        Get
+            Return CType(Me("Lattitude"),Double)
+        End Get
+        Set
+            Me("Lattitude") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+    Public Property Longitude() As Double
+        Get
+            Return CType(Me("Longitude"),Double)
+        End Get
+        Set
+            Me("Longitude") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+    Public Property RA_rate() As Double
+        Get
+            Return CType(Me("RA_rate"),Double)
+        End Get
+        Set
+            Me("RA_rate") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+    Public Property Dec_rate() As Double
+        Get
+            Return CType(Me("Dec_rate"),Double)
+        End Get
+        Set
+            Me("Dec_rate") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

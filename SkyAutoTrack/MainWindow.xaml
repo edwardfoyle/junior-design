@@ -20,9 +20,30 @@
 
     <StackPanel>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top">
-            <MenuItem Header="_File" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}"/>
-            <MenuItem Header="_Settings" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}"/>
-            <MenuItem Header="_Record" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}"/>
+            <MenuItem Header="_File" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}" BorderThickness="0" BorderBrush="#002196F3">
+                <MenuItem Header="New Macro" Click="NewMacroMenuItem_Click"/>
+                <MenuItem Header="Open Macro" Click="OpenMacroMenuItem_Click"/>
+                <MenuItem Header="Run Macro" Click="RunMacroMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Settings" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Lattitude:" VerticalAlignment="Center" Padding="0,0,5,0"/>
+                    <TextBox Text="{Binding Lattitude, Mode=TwoWay, Source={x:Static properties:MySettings.Default}}" MinWidth="75" MaxWidth="100" VerticalContentAlignment="Bottom" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Longitude:" VerticalAlignment="Center" Padding="0,0,5,0"/>
+                    <TextBox Text="{Binding Longitude, Mode=TwoWay, Source={x:Static properties:MySettings.Default}}" MinWidth="75" MaxWidth="100" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="RA Rate:" Padding="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding RA_rate, Mode=TwoWay, Source={x:Static properties:MySettings.Default}}" MaxWidth="100" MinWidth="75" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Dec Rate:" Padding="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Dec_rate, Mode=TwoWay, Source={x:Static properties:MySettings.Default}}" MaxWidth="100" MinWidth="75" />
+                </StackPanel>
+            </MenuItem>
+            <MenuItem Header="_Record" Click="RecordMenuItem_Click" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}"/>
         </Menu>
         <Grid Height="541">
             <TextBlock x:Name="selectScope_Label" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Select and Connect Telescope" />
@@ -46,7 +67,8 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name"/>
-                        <GridViewColumn Header="Coordinates"/>
+                        <GridViewColumn Header="Right Ascension"/>
+                        <GridViewColumn Header="Declination"/>
                     </GridView>
                 </ListView.View>
                 <ListViewItem Content="Big Dipper"/>

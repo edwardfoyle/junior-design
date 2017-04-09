@@ -79,4 +79,22 @@ Public Class MainWindow
     Private Sub MainWindow_Closing(ByVal sender As Object, ByVal e As CancelEventArgs)
         My.Settings.Save()
     End Sub
+
+    Private Sub RecordMenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim recordWindow = New RecordWindow()
+        recordWindow.Show()
+    End Sub
+
+    Private Sub NewMacroMenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim macroEditor = New MacroEditor(objTelescope)
+        macroEditor.Show()
+    End Sub
+
+    Private Sub OpenMacroMenuItem_Click(sender As Object, e As RoutedEventArgs)
+
+    End Sub
+
+    Private Sub RunMacroMenuItem_Click(sender As Object, e As RoutedEventArgs)
+
+    End Sub
 End Class
