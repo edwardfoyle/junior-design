@@ -16,9 +16,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{StaticResource MaterialDesignFont}" 
         Title="Record Data" Height="400" Width="400"  SnapsToDevicePixels="True"
+        Loaded="RecordWindow_Load"
         Closing="RecordWindow_Closing">
     <Grid>
-        <TextBox x:Name="DataBox" HorizontalAlignment="Left" Height="314" Margin="10,10,0,0" TextWrapping="Wrap" Text="timestamp,ra,dec" VerticalAlignment="Top" Width="372" VerticalContentAlignment="Top" IsReadOnly="True" BorderBrush="#FF2196F3" BorderThickness="1"/>
+        <TextBox x:Name="DataBox" HorizontalAlignment="Left" Height="314" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" VerticalContentAlignment="Top" IsReadOnly="True" BorderBrush="#FF2196F3" BorderThickness="1"/>
         <Button x:Name="RecordStart" Click="RecordStart_Click" Content="Start" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="RecordReset" Click="RecordReset_Click" Content="Reset" HorizontalAlignment="Left" Margin="90,329,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="RecordSave" Click="RecordSave_Click" Content="Save" HorizontalAlignment="Left" Margin="307,329,0,0" VerticalAlignment="Top" Width="75"/>

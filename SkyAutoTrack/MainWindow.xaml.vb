@@ -81,7 +81,7 @@ Public Class MainWindow
     End Sub
 
     Private Sub RecordMenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim recordWindow = New RecordWindow()
+        Dim recordWindow = New RecordWindow(objTelescope)
         recordWindow.Show()
     End Sub
 

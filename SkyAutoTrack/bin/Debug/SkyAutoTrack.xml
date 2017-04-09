@@ -54,6 +54,26 @@ SkyAutoTrack
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:SkyAutoTrack.MacroEditor">
+<summary>
+MacroEditor
+</summary>
+</member>
+<member name="M:SkyAutoTrack.MacroEditor.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:SkyAutoTrack.RecordWindow">
+<summary>
+RecordWindow
+</summary>
+</member>
+<member name="M:SkyAutoTrack.RecordWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:SkyAutoTrack.MainWindow">
 <summary>
 MainWindow
