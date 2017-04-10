@@ -24,13 +24,12 @@
 
     Public Sub Parse()
         'Driver method that will call all recursive descent methods
-        window.MacroStatus.Text = "Running macro ... "
+        window.MacroStatus.Text = "Running Macro"
         Try
             Program()
-            window.MacroStatus.Text = "Done!"
         Catch e As Exception
             'Do exception handling
-            window.MacroStatus.Text = "Unable to parse macro"
+            window.MacroStatus.Text = "Unable to Parse"
         End Try
     End Sub
 
@@ -39,6 +38,7 @@
             Consume(Token.TokenType.Begin)
             Statement_Series()
             Consume(Token.TokenType.Done)
+            window.MacroStatus.Text = "Success"
         Else
             Throw New Exception
         End If
@@ -92,6 +92,8 @@
         If current IsNot Nothing Then
             Consume(Token.TokenType.Park)
             Consume(Token.TokenType.Semi)
+            window.objTelescope.Park()
+            Wait(10)
         Else
             Throw New Exception
         End If
@@ -107,6 +109,8 @@
             Dim secondCoor As Double = Convert.ToDouble(Consume(Token.TokenType.Float))
             Consume(Token.TokenType.RParen)
             Consume(Token.TokenType.Semi)
+            window.objTelescope.Tracking = True
+            window.objTelescope.Unpark()
             window.objTelescope.SlewToCoordinates(firstCoor, secondCoor)
         Else
             Throw New Exception
@@ -117,12 +121,25 @@
         If current IsNot Nothing Then
             Consume(Token.TokenType.Record)
             Consume(Token.TokenType.Semi)
+            Dim recordWindow As New RecordWindow(window.objTelescope)
+            recordWindow.Show()
+            recordWindow.Record_Start_Stop()
+            Wait(10)
             Statement_Series()
             Consume(Token.TokenType.StopRecord)
             Consume(Token.TokenType.Semi)
+            Wait(10)
+            recordWindow.Record_Start_Stop()
         Else
             Throw New Exception
         End If
+    End Sub
+
+    Private Sub Wait(ByVal seconds As Integer)
+        For i As Integer = 0 To seconds * 100
+            System.Threading.Thread.Sleep(10)
+            'Does this still work in WPF?
+        Next
     End Sub
 
 End Class

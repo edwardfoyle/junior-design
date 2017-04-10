@@ -27,7 +27,7 @@
                 <TextBox x:Name="fontSizeBox" TextWrapping="Wrap" Text="14" VerticalAlignment="Top" Width="50" Height="26"/>
                 <Grid Height="{Binding ActualHeight, ElementName=toolbar}" Width="577">
                     <Button x:Name="RunMacroButton" Click="RunMacroButton_Click" Content="Run" HorizontalAlignment="Left" Margin="492,0,0,0" VerticalAlignment="Top" Width="75" Height="{Binding ActualHeight, ElementName=toolbar}" Padding="0"/>
-                    <Button x:Name="SaveButton" Click="SaveButton_Click" Content="Save" HorizontalAlignment="Left" Margin="412,0,0,0" VerticalAlignment="Top" Width="75" Height="{Binding ActualHeight, ElementName=toolbar}" Padding="0"/>
+                    <Button x:Name="SaveButton" Click="SaveButton_Click" Content="Save" HorizontalAlignment="Left" Margin="412,0,0,-0.2" Width="75" Height="{Binding ActualHeight, ElementName=toolbar}" Padding="0"/>
 
                 </Grid>
 
