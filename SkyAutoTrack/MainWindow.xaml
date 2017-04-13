@@ -62,16 +62,16 @@
             <cam:WebCameraControl x:Name="camControl" Margin="350,10,11,16"/>
             <TextBox x:Name="search_Text" HorizontalAlignment="Left" Height="23" Margin="10,303,0,0" TextWrapping="Wrap" Text="Search Terms" VerticalAlignment="Top" Width="236"/>
             <TextBlock x:Name="search_Label" HorizontalAlignment="Left" Margin="10,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Search for Celestial Points of Interest" />
-            <Button x:Name="search_Button" Content="Search" HorizontalAlignment="Left" Margin="251,301,0,0" VerticalAlignment="Top" Width="85" Height="25"/>
+            <Button x:Name="search_Button" Click="search_Button_Click" Content="Search" HorizontalAlignment="Left" Margin="251,301,0,0" VerticalAlignment="Top" Width="85" Height="25"/>
             <ListView x:Name="searchResults_List" HorizontalAlignment="Left" Height="194" Margin="10,331,0,0" VerticalAlignment="Top" Width="326">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Name"/>
-                        <GridViewColumn Header="Right Ascension"/>
-                        <GridViewColumn Header="Declination"/>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="RA" DisplayMemberBinding="{Binding RA}"/>
+                        <GridViewColumn Header="Dec" DisplayMemberBinding="{Binding Dec}"/>
                     </GridView>
                 </ListView.View>
-                <ListViewItem Content="Big Dipper"/>
+                <ListViewItem Content="Results will appear here"/>
             </ListView>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Initialized="comboBox_Initialized" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="219"/>
 
