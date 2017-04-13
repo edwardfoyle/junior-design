@@ -43,7 +43,7 @@ Public Class RecordWindow
     End Sub
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs)
-        If recording Then
+        If recording And objTelescope IsNot Nothing Then
             strLine = System.DateTime.Now().ToString() + "," + objTelescope.RightAscension.ToString() + "," + objTelescope.Declination.ToString()
             fsoStream.WriteLine(strLine)
             DataBox.AppendText(strLine + vbNewLine)
