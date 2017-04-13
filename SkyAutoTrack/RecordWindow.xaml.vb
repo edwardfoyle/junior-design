@@ -42,6 +42,10 @@ Public Class RecordWindow
         recording = True
     End Sub
 
+    Public Sub Record_Start_Stop()
+        recording = Not recording
+    End Sub
+
     Private Sub Timer_Tick(sender As Object, e As EventArgs)
         If recording And objTelescope IsNot Nothing Then
             strLine = System.DateTime.Now().ToString() + "," + objTelescope.RightAscension.ToString() + "," + objTelescope.Declination.ToString()

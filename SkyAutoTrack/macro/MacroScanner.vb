@@ -43,23 +43,23 @@
                 Case Else
                     currToken = currToken + curr
                     Select Case currToken
-                        Case "park"
+                        Case "Park"
                             newToken = New Token(Token.TokenType.Park, "park")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "slew"
+                        Case "Slew"
                             newToken = New Token(Token.TokenType.Slew, "slew")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "record"
+                        Case "Record"
                             newToken = New Token(Token.TokenType.Record, "record")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "stop"
+                        Case "Stop"
                             newToken = New Token(Token.TokenType.StopRecord, "stop")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "begin"
+                        Case "Begin"
                             newToken = New Token(Token.TokenType.Begin, "begin")
                             tokens.AddLast(newToken)
                             currToken = ""
@@ -71,7 +71,7 @@
                             newToken = New Token(Token.TokenType.ForLoop, "loop")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "done"
+                        Case "Done"
                             newToken = New Token(Token.TokenType.Done, "done")
                             tokens.AddLast(newToken)
                             currToken = ""
@@ -83,7 +83,7 @@
                             newToken = New Token(Token.TokenType.Dots, "...")
                             tokens.AddLast(newToken)
                             currToken = ""
-                        Case "end"
+                        Case "End"
                             newToken = New Token(Token.TokenType.EndFor, "end")
                             tokens.AddLast(newToken)
                             currToken = ""
@@ -107,3 +107,4 @@
     End Function
 
 End Class
+

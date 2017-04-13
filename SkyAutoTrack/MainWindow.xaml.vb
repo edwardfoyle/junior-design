@@ -91,10 +91,29 @@ Public Class MainWindow
     End Sub
 
     Private Sub OpenMacroMenuItem_Click(sender As Object, e As RoutedEventArgs)
-
+        Dim openFileDialog As New Microsoft.Win32.OpenFileDialog
+        Dim filename As String
+        If openFileDialog.ShowDialog() Then
+            filename = openFileDialog.FileName
+            Dim macro As New MacroEditor(objTelescope)
+            macro.setCurrentFile(filename, True)
+            macro.Show()
+        End If
     End Sub
 
     Private Sub RunMacroMenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim openFileDialog As New Microsoft.Win32.OpenFileDialog
+        Dim filename As String
+        If openFileDialog.ShowDialog() Then
+            filename = openFileDialog.FileName
+            Dim macro As New MacroEditor(objTelescope)
+            macro.setCurrentFile(filename, True)
+            macro.Show()
+            macro.RunMacro()
+        End If
+    End Sub
+
+    Private Sub searchResults_List_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles searchResults_List.SelectionChanged
 
     End Sub
 End Class
