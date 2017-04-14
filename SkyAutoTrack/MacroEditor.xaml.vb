@@ -1,4 +1,6 @@
-﻿Public Class MacroEditor
+﻿Imports System.IO
+
+Public Class MacroEditor
 
     Dim currentFileName As String
     Dim lexer As New MacroScanner()
@@ -25,6 +27,9 @@
 
     Private Sub HelpMenuItem_Click(sender As Object, e As RoutedEventArgs)
         ' open PDF documentation here
+        Dim pdf As String = Path.Combine(Environment.CurrentDirectory, "introduction-macros-sky.pdf")
+        Console.WriteLine(pdf)
+        System.Diagnostics.Process.Start(pdf)
     End Sub
 
     Public Sub setCurrentFile(fileName As String, read As Boolean)
