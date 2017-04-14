@@ -116,4 +116,34 @@ Public Class MainWindow
     Private Sub searchResults_List_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles searchResults_List.SelectionChanged
 
     End Sub
+
+    Private Sub search_Button_Click(sender As Object, e As RoutedEventArgs)
+        Dim searchTerms As String = search_Text.Text
+        If searchTerms.Length = 0 Or searchTerms = "Search Terms" Then
+            Return
+        End If
+        Dim API_URL As String = "http://server1.sky-map.org/search?star="
+        Dim query As String = WebUtility.HtmlEncode(API_URL + searchTerms)
+        Dim webClient As New System.Net.WebClient
+        Dim result As String = webClient.DownloadString(query)
+        Dim obj = XDocument.Parse(result)
+        Dim star = obj.Element("response").Element("object")
+        Dim ra As String = star.Element("ra")
+        Dim dec As String = star.Element("de")
+        Dim name As String = star.Element("name")
+        searchResults_List.Items.Clear()
+        searchResults_List.Items.Add(New With {Key .Name = name, .RA = ra, .Dec = dec})
+    End Sub
+End Class
+
+Public Class ListItem
+    Public Name As String
+    Public RA As String
+    Public Dec As String
+
+    Public Sub New(ByVal new_name As String, ByVal new_ra As String, ByVal new_dec As String)
+        Name = new_name
+        RA = new_ra
+        Dec = new_dec
+    End Sub
 End Class
