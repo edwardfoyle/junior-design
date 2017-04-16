@@ -1,0 +1,44 @@
+﻿<Window x:Class="MacroEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:SkyAutoTrack"
+        mc:Ignorable="d"
+        Title="Macro Editor" Height="600" Width="900">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="_File" FontSize="12" Height="{Binding ActualHeight, ElementName=menu}" BorderThickness="0" BorderBrush="#002196F3">
+                <MenuItem Header="New Macro" Click="NewMacroMenuItem_Click"/>
+                <MenuItem Header="Open Macro" Click="OpenMacroMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help" FontSize="12" Click="HelpMenuItem_Click" Height="{Binding ActualHeight, ElementName=menu}" BorderThickness="0" BorderBrush="#002196F3"/>
+        </Menu>
+        <StackPanel Margin="0,30,0,0">
+            <StackPanel Orientation="Horizontal" Height="25" x:Name="toolbar">
+                <TextBlock x:Name="fontFamLabel" TextWrapping="Wrap" Text="Font Family:" Height="18" VerticalAlignment="Center" Padding="10,0,5,0"/>
+                <ComboBox x:Name="fontFamComboBox" ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" Width="120" Height="27">
+                    <ComboBox.SelectedValue>
+                        <FontFamily>Consolas</FontFamily>
+                    </ComboBox.SelectedValue>
+                </ComboBox>
+                <TextBlock x:Name="fontSizeLabel" Text="Font Size:" Height="18" Padding="10,0,5,0"/>
+                <TextBox x:Name="fontSizeBox" TextWrapping="Wrap" Text="14" VerticalAlignment="Top" Width="50" Height="26"/>
+                <Grid Height="{Binding ActualHeight, ElementName=toolbar}" Width="577">
+                    <Button x:Name="RunMacroButton" Click="RunMacroButton_Click" Content="Run" HorizontalAlignment="Left" Margin="492,0,0,0" VerticalAlignment="Top" Width="75" Height="{Binding ActualHeight, ElementName=toolbar}" Padding="0"/>
+                    <Button x:Name="SaveButton" Click="SaveButton_Click" Content="Save" HorizontalAlignment="Left" Margin="412,0,0,-0.2" Width="75" Height="{Binding ActualHeight, ElementName=toolbar}" Padding="0"/>
+
+                </Grid>
+
+            </StackPanel>
+            <TextBox x:Name="MacroText" TextWrapping="WrapWithOverflow" FontFamily="{Binding SelectedValue.Source, ElementName=fontFamComboBox, Mode=OneWay}" Margin="10" Height="460" VerticalContentAlignment="Top" BorderBrush="#FF2196F3" BorderThickness="1" FontSize="{Binding Text, ElementName=fontSizeBox, StringFormat=\{0:D\}}" AcceptsReturn="True" AcceptsTab="True" TextOptions.TextHintingMode="Animated"/>
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <TextBlock Text="Macro Status: " Height="18"/>
+                <TextBox x:Name="MacroStatus" TextWrapping="Wrap" FontFamily="Consolas" Margin="10,0,10,0" Height="23" VerticalContentAlignment="Top" BorderBrush="#FF2196F3" BorderThickness="0" Width="787" Text="OK"/>
+
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

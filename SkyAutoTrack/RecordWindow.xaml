@@ -1,0 +1,28 @@
+﻿<Window x:Class="RecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:properties="clr-namespace:SkyAutoTrack"
+        xmlns:cam="clr-namespace:WebEye.Controls.Wpf;assembly=WebEye.Controls.Wpf.WebCameraControl"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}" 
+        Title="Record Data" Height="400" Width="400"  SnapsToDevicePixels="True"
+        Loaded="RecordWindow_Load"
+        Closing="RecordWindow_Closing">
+    <Grid>
+        <TextBox x:Name="DataBox" HorizontalAlignment="Left" Height="314" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" VerticalContentAlignment="Top" IsReadOnly="True" BorderBrush="#FF2196F3" BorderThickness="1"/>
+        <Button x:Name="RecordStart" Click="RecordStart_Click" Content="Start" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="RecordReset" Click="RecordReset_Click" Content="Reset" HorizontalAlignment="Left" Margin="90,329,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="RecordSave" Click="RecordSave_Click" Content="Save" HorizontalAlignment="Left" Margin="307,329,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
