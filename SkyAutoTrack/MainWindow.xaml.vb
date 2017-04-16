@@ -24,9 +24,6 @@ Public Class MainWindow
     Private clicked As Boolean = False
     Private api As New ApiManager
 
-    'Private api As New APIManager
-    'Public mySettings As New UserSettings
-
     Public Sub selectScope_Choose_Click(sender As Object, e As RoutedEventArgs)
         Dim obj As New ASCOM.Utilities.Chooser
         My.Settings.Telescope = obj.Choose(My.Settings.Telescope)
@@ -122,17 +119,51 @@ Public Class MainWindow
         If searchTerms.Length = 0 Or searchTerms = "Search Terms" Then
             Return
         End If
+        ' wikisky.org API
+        ' use http://server2.sky-map.org/getstars.jsp?ra=12&de=45&angle=30&max_stars=3&max_vmag=8 to query region of the sky
+        ' cone search params: ra, de, angle, max_stars, max_vmag
+        Dim ANGLE = "30"
+        Dim MAX_STARS = "20"
+        Dim MAX_VMAG = "8"
+        Dim CONE_SEARCH_URL = "http://server2.sky-map.org/getstars.jsp?"
         Dim API_URL As String = "http://server1.sky-map.org/search?star="
         Dim query As String = WebUtility.HtmlEncode(API_URL + searchTerms)
         Dim webClient As New System.Net.WebClient
         Dim result As String = webClient.DownloadString(query)
         Dim obj = XDocument.Parse(result)
-        Dim star = obj.Element("response").Element("object")
-        Dim ra As String = star.Element("ra")
-        Dim dec As String = star.Element("de")
-        Dim name As String = star.Element("name")
-        searchResults_List.Items.Clear()
-        searchResults_List.Items.Add(New With {Key .Name = name, .RA = ra, .Dec = dec})
+        Dim err = obj.Element("response").Element("status")
+        If err.Value = 0 Then
+            Dim star = obj.Element("response").Element("object")
+            Dim ra As String = star.Element("ra")
+            Dim dec As String = star.Element("de")
+            Dim name As String = star.Element("name").Value.ToString
+            searchResults_List.Items.Clear()
+            searchResults_List.Items.Add(New With {Key .Name = name, .RA = ra, .Dec = dec})
+            query = CONE_SEARCH_URL + "ra=" + ra.ToString + "&de=" + dec.ToString + "&angle=" + ANGLE + "&max_stars=" + MAX_STARS + "&max_vmag=" + MAX_VMAG
+            result = webClient.DownloadString(query)
+            obj = XDocument.Parse(result)
+            Try
+                For Each item As XElement In obj.Descendants("star")
+                    ra = item.Element("ra")
+                    dec = item.Element("de")
+                    name = item.Element("catId")
+                    searchResults_List.Items.Add(New With {Key .Name = name, .RA = ra, .Dec = dec})
+                Next item
+            Catch ex As Exception
+                ' couldn't load anymore results
+            End Try
+            err = obj.Element("response").Element("status")
+
+            ' iterate through result
+        Else
+            searchResults_List.Items.Clear()
+        End If
+    End Sub
+
+    Private Sub searchResults_List_MouseDoubleClick(sender As Object, e As MouseButtonEventArgs)
+        Dim selected = searchResults_List.SelectedItem
+        ra_Text.Text = selected.RA
+        dec_Text.Text = selected.Dec
     End Sub
 End Class
 
