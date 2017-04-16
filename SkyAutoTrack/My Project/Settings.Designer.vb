@@ -115,7 +115,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
     Public Property RA_rate() As Double
         Get
             Return CType(Me("RA_rate"),Double)
@@ -127,7 +127,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
     Public Property Dec_rate() As Double
         Get
             Return CType(Me("Dec_rate"),Double)
