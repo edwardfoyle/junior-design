@@ -12,6 +12,17 @@ This desktop application has been tested on the following operating systems:
 
 In theory, it should work on any Windows Operating System.
 
+## Telescope Requirements
+
+- Must be an ASCOM compliant electronic telescope
+
+## Hardware Requirements
+
+In order to utilize the full capabilities of this application, you must have the following:
+
+- Webcam
+- Cable to connect your telescope and your computer and corresponding driver
+
 ## Installation
 
 Before this application can be installed, you must install the following:
@@ -29,3 +40,6 @@ After making any of your changes in the Visual Studio IDE, you can select publis
 
 If you would like to run the application as initially designed, you can simply download the zip file from <Insert something here?>
 
+## Features
+
+Sky AutoTrack uses the ASCOM standard to interface with a wide range of electronic telescopes. 
