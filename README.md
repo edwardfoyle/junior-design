@@ -30,16 +30,22 @@ Before this application can be installed, you must install the following:
 1. [Python 2.7 or better](https://www.python.org/downloads/release/python-2713/) 
 2. [ASCOM Platform 6.3 or better](http://ascom-standards.org/Downloads/Index.htm) 
 
-### If Compiling From Source
+#### If Compiling From Source
 
 If you want to compile this yourself in order to make any custom changes to our application you will need to download [Visual Studio](https://www.visualstudio.com/downloads/).
 
 After making any of your changes in the Visual Studio IDE, you can select publish from under the Build list on the toolbar.
 
-### If Running Executable
+#### If Running Executable
 
 If you would like to run the application as initially designed, you can simply download the zip file from <Insert something here?>
 
 ## Features
 
-Sky AutoTrack uses the ASCOM standard to interface with a wide range of electronic telescopes. 
+#### Alignment
+
+#### Astronomical Object Search
+
+#### Recording
+
+#### Macros
