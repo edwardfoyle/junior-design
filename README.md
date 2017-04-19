@@ -44,8 +44,17 @@ If you would like to run the application as initially designed, you can simply d
 
 #### Alignment
 
+Though we have been unable to test with a physical telescope, using a simulator has allowed us to be the infrastructure for automated telescope alignment.
+
 #### Astronomical Object Search
+
+Our application can search for astronomical objects such as stars, galaxies, and constellations based on their common names. Upon returning the search results, the resultant coordinates can be used to direct the telescope towards the desired object.
 
 #### Recording
 
+Application sessions can be recorded and saved into a CSV file containing the datetime and the telescope's right ascension and declination.
+
 #### Macros
+Difficult and tedious tasks can be automated with the use of Sky AutoTrack's macro system. This is a simple programming language that allows users to set a sequence of actions for their telescope including record, slew, and park. 
+
+This is the most easily extensible part of our application as it is an interpreted language with a resursive descent parser and a simple lexer. 
