@@ -21,5 +21,11 @@ Before this application can be installed, you must install the following:
 
 ### If Compiling From Source
 
+If you want to compile this yourself in order to make any custom changes to our application you will need to download [Visual Studio](https://www.visualstudio.com/downloads/).
+
+After making any of your changes in the Visual Studio IDE, you can select publish from under the Build list on the toolbar.
+
 ### If Running Executable
+
+If you would like to run the application as initially designed, you can simply download the zip file from <Insert something here?>
 
