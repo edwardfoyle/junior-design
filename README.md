@@ -21,7 +21,7 @@ In theory, it should work on any Windows Operating System.
 In order to utilize the full capabilities of this application, you must have the following:
 
 - Webcam
-- Cable to connect your telescope and your computer and corresponding driver
+- Cable to connect your telescope and your computer and the corresponding driver
 
 ## Installation
 
