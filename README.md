@@ -14,6 +14,11 @@ In theory, it should work on any Windows Operating System.
 
 ## Installation
 
+Before this application can be installed, you must install the following:
+
+1. [Python 2.7 or better](https://www.python.org/downloads/release/python-2713/) 
+2. [ASCOM Platform 6.3 or better](http://ascom-standards.org/Downloads/Index.htm) 
+
 ### If Compiling From Source
 
 ### If Running Executable
