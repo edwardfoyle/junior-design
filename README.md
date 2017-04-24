@@ -59,4 +59,4 @@ Difficult and tedious tasks can be automated with the use of Sky AutoTrack's mac
 
 This is the most easily extensible part of our application as it is an interpreted language with a resursive descent parser and a simple lexer. 
 
-**For more information on the current state of features, see the [release notes](RELEASE_NOTES.md)**
+**For more information on the current state of features, see the [release notes](RELEASE_NOTES.md).**
