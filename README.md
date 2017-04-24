@@ -28,7 +28,7 @@ In order to utilize the full capabilities of this application, you must have the
 Before this application can be installed, you must install the following:
 
 1. [Python 2.7](https://www.python.org/downloads/release/python-2713/) 
-    Note that you must install Python to C:\Python27 (this is the default installation location)
+Note that you must install Python to C:\Python27 (this is the default installation location)
 2. [ASCOM Platform 6.3 or better](http://ascom-standards.org/Downloads/Index.htm) 
 
 #### If Compiling From Source
