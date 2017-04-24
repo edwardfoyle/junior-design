@@ -58,3 +58,5 @@ Application sessions can be recorded and saved into a CSV file containing the da
 Difficult and tedious tasks can be automated with the use of Sky AutoTrack's macro system. This is a simple programming language that allows users to set a sequence of actions for their telescope including record, slew, and park. For more information see our helpful [tutorial](docs/Macro_Manual.pdf).
 
 This is the most easily extensible part of our application as it is an interpreted language with a resursive descent parser and a simple lexer. 
+
+**For more information on the current state of features, see the [release notes](RELEASE_NOTES.md)**
