@@ -40,7 +40,7 @@ After making any of your changes in the Visual Studio IDE, you can select publis
 
 #### If Running Executable
 
-If you would like to run the application as initially designed, you can simply download the [zip file](Sky_AutoTrack.zip) and run setup.exe
+If you would like to run the application as initially designed, you can simply download the [zip file](Sky_AutoTrack_Install.zip) and run setup.exe
 
 ## Features
 
